@@ -16,12 +16,12 @@
 
     /* Header */
     header {
-        background-color: #ffffff;
-        border-bottom: 1px solid #e0e0e0;
+        background-color: #1a2b5b;
+        color: #ffffff;
         position: sticky;
         top: 0;
         z-index: 1000;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
     nav {
         display: flex;
@@ -31,17 +31,17 @@
     }
     nav a {
         text-decoration: none;
-        color: #1a2b5b;
+        color: #ffffff;
         margin-left: 2rem;
         font-weight: bold;
         transition: color 0.3s;
     }
-    nav a:hover { color: #0f1a3b; }
+    nav a:hover { color: #f1c40f; }
 
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: bold;
-        color: #1a2b5b;
+        color: #ffffff;
     }
 
     /* Hero */
@@ -53,6 +53,7 @@
     .hero h1 {
         font-size: 2.8rem;
         margin-bottom: 1rem;
+        color: #1a2b5b;
     }
     .hero p {
         font-size: 1.15rem;
@@ -181,11 +182,14 @@
 
     /* Footer */
     footer {
-        background-color: #ffffff;
-        padding: 2rem;
+        background-color: #1a2b5b;
+        color: #ffffff;
+        padding: 3rem 2rem;
         text-align: center;
-        border-top: 1px solid #e0e0e0;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+    }
+    footer p {
+        margin-top: 1rem;
     }
     .accordion {
         cursor: pointer;
@@ -196,20 +200,21 @@
         outline: none;
         font-weight: bold;
         margin-top: 1rem;
-        background-color: #f9f9f9;
+        background-color: #27385b;
         border-radius: 8px;
+        color: #ffffff;
         transition: background-color 0.3s;
     }
-    .accordion:hover { background-color: #e0e0e0; }
+    .accordion:hover { background-color: #0f1a3b; }
     .panel {
         padding: 0.5rem 1rem;
         display: none;
-        background-color: #f1f1f1;
+        background-color: #2f467d;
+        color: #ffffff;
         overflow: hidden;
         margin-bottom: 1rem;
         border-radius: 8px;
     }
-
 </style>
 </head>
 <body>
