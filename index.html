@@ -1,320 +1,351 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>effectrecruiting – Personalvermittlung für Industrie & Produktion</title>
-    <style>
-        /* Grundlegendes Styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            color: #333333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>effectrecruiting – Personalvermittlung für Industrie & Produktion</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        color: #333333;
+        scroll-behavior: smooth;
+    }
 
-        /* Header / Menü */
-        header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    /* Header */
+    header {
+        background-color: #ffffff;
+        border-bottom: 1px solid #e0e0e0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+    nav a {
+        text-decoration: none;
+        color: #1a2b5b;
+        margin-left: 2rem;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+    nav a:hover { color: #0f1a3b; }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #1a2b5b;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: #1a2b5b;
-            margin-left: 2rem;
-            font-weight: bold;
-        }
+    /* Hero */
+    .hero {
+        text-align: center;
+        padding: 5rem 2rem;
+        background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%);
+    }
+    .hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+    .hero p {
+        font-size: 1.15rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn {
+        display: inline-block;
+        background-color: #1a2b5b;
+        color: #ffffff;
+        padding: 0.85rem 1.8rem;
+        margin: 0.5rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+    .btn:hover {
+        background-color: #0f1a3b;
+        transform: translateY(-2px);
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    /* Leistungen */
+    section {
+        padding: 4rem 2rem;
+        max-width: 1200px;
+        margin: auto;
+    }
+    section h2 {
+        text-align: center;
+        color: #1a2b5b;
+        margin-bottom: 3rem;
+    }
+    .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+    }
+    .service-card {
+        background-color: #f9f9f9;
+        padding: 2rem 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .service-card h3 {
+        color: #1a2b5b;
+        margin-bottom: 1rem;
+    }
+    .service-card ul {
+        list-style: none;
+        padding: 0;
+        line-height: 1.6;
+    }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #1a2b5b;
-        }
+    /* Kontaktformular */
+    .contact-form {
+        background-color: #f1f1f1;
+        padding: 3rem 2rem;
+        border-radius: 12px;
+        max-width: 650px;
+        margin: 3rem auto;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        position: relative;
+    }
+    .contact-form h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #1a2b5b;
+    }
+    .contact-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 0.85rem;
+        margin-bottom: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        border-color: #1a2b5b;
+        outline: none;
+    }
+    .contact-form button {
+        width: 100%;
+        background-color: #1a2b5b;
+        color: #ffffff;
+        padding: 0.85rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+    .contact-form button:hover {
+        background-color: #0f1a3b;
+        transform: translateY(-2px);
+    }
+    .form-success {
+        text-align: center;
+        padding: 1rem;
+        background-color: #d4edda;
+        color: #155724;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        display: none;
+        font-weight: bold;
+    }
 
-        /* Hero / Startbereich */
-        .hero {
-            text-align: center;
-            padding: 4rem 2rem;
-        }
+    /* Footer */
+    footer {
+        background-color: #ffffff;
+        padding: 2rem;
+        text-align: center;
+        border-top: 1px solid #e0e0e0;
+        font-size: 0.9rem;
+    }
+    .accordion {
+        cursor: pointer;
+        padding: 0.6rem;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-weight: bold;
+        margin-top: 1rem;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
+    .accordion:hover { background-color: #e0e0e0; }
+    .panel {
+        padding: 0.5rem 1rem;
+        display: none;
+        background-color: #f1f1f1;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+    }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #1a2b5b;
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            margin: 0.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .btn:hover {
-            background-color: #0f1a3b;
-        }
-
-        /* Leistungen */
-        section {
-            padding: 3rem 2rem;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        section h2 {
-            text-align: center;
-            color: #1a2b5b;
-            margin-bottom: 2rem;
-        }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background-color: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        }
-
-        .service-card h3 {
-            color: #1a2b5b;
-            margin-bottom: 1rem;
-        }
-
-        .service-card ul {
-            list-style: none;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        /* Kontaktformular */
-        .contact-form {
-            background-color: #f1f1f1;
-            padding: 2rem;
-            border-radius: 8px;
-            max-width: 600px;
-            margin: 3rem auto;
-        }
-
-        .contact-form h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1.5rem;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
-
-        .contact-form button {
-            width: 100%;
-            background-color: #1a2b5b;
-            color: #ffffff;
-            padding: 0.75rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .contact-form button:hover {
-            background-color: #0f1a3b;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #ffffff;
-            padding: 2rem;
-            text-align: center;
-            border-top: 1px solid #e0e0e0;
-            font-size: 0.9rem;
-        }
-
-        .accordion {
-            cursor: pointer;
-            padding: 0.5rem;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-weight: bold;
-            margin-top: 1rem;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-        }
-
-        .panel {
-            padding: 0 1rem;
-            display: none;
-            background-color: #f1f1f1;
-            overflow: hidden;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-        }
-
-    </style>
+</style>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header>
-        <nav>
-            <div class="logo">effectrecruiting</div>
-            <div>
-                <a href="#home">Home</a>
-                <a href="#leistungen">Leistungen</a>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero / Startbereich -->
-    <section class="hero" id="home">
-        <h1>Ihr Partner für qualifizierte Fachkräfte</h1>
-        <p>Wir unterstützen Industrie- und produzierende Unternehmen bei der Besetzung operativer Fach- und Arbeitskräfte. Unser Fokus liegt auf qualifizierten Mitarbeitern für Fertigung, Produktion und Logistik.</p>
-        <a href="#leistungen" class="btn">Unsere Leistungen</a>
-        <a href="#kontakt" class="btn">Kontakt aufnehmen</a>
-    </section>
-
-    <!-- Leistungen -->
-    <section id="leistungen">
-        <h2>Was wir für Ihr Unternehmen finden</h2>
-        <div class="services">
-            <div class="service-card">
-                <h3>🔧 Fachpersonal Produktion & Technik</h3>
-                <ul>
-                    <li>Industriemechaniker</li>
-                    <li>Mechatroniker</li>
-                    <li>Maschinen- und Anlagenführer</li>
-                    <li>Zerspanungsmechaniker (CNC)</li>
-                    <li>Schlosser / Metallbauer</li>
-                    <li>Elektroniker für Betriebstechnik</li>
-                    <li>Produktionstechnische Fachkräfte</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>🏭 Mitarbeiter für Fertigung & Montage</h3>
-                <ul>
-                    <li>Maschinenbediener</li>
-                    <li>Montagemitarbeiter</li>
-                    <li>Produktionsmitarbeiter</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>📦 Logistik & Lager</h3>
-                <ul>
-                    <li>Staplerfahrer</li>
-                    <li>Fachlageristen</li>
-                    <li>Kommissionierer</li>
-                    <li>Versandmitarbeiter</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>🧰 Aushilfen & Unterstützende Kräfte</h3>
-                <ul>
-                    <li>Produktionshelfer</li>
-                    <li>Helfer im Lager</li>
-                    <li>Saison- und Schichtkräfte</li>
-                </ul>
-            </div>
+<!-- Header / Navigation -->
+<header>
+    <nav>
+        <div class="logo">effectrecruiting</div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#leistungen">Leistungen</a>
+            <a href="#kontakt">Kontakt</a>
         </div>
-    </section>
+    </nav>
+</header>
 
-    <!-- Kontaktformular -->
-    <section id="kontakt" class="contact-form">
-        <h2>Kontaktieren Sie uns</h2>
-        <form action="https://formspree.io/f/yourformid" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+<!-- Hero -->
+<section class="hero" id="home">
+    <h1>Ihr Partner für qualifizierte Fachkräfte</h1>
+    <p>Wir vermitteln qualifizierte Fachkräfte für Industrie, Produktion und Logistik. Schnell, zuverlässig und professionell.</p>
+    <a href="#leistungen" class="btn">Unsere Leistungen</a>
+    <a href="#kontakt" class="btn">Kontakt aufnehmen</a>
+</section>
 
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="_replyto" required>
-
-            <label for="firma">Firma</label>
-            <input type="text" id="firma" name="firma">
-
-            <label for="message">Nachricht</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Nachricht senden</button>
-        </form>
-    </section>
-
-    <!-- Footer mit Impressum & Datenschutz -->
-    <footer>
-        <button class="accordion">Impressum</button>
-        <div class="panel">
-            <p>effectrecruiting Inhaber: Beder Amer, Einzelunternehmen<br>
-            Saatwinkler Damm 123, 13629 Berlin<br>
-            Keine USt-ID<br>
-            Vertreten durch: Beder Amer<br>
-            E-Mail: info@effectrecruiting.com</p>
+<!-- Leistungen -->
+<section id="leistungen">
+    <h2>Was wir für Ihr Unternehmen finden</h2>
+    <div class="services">
+        <div class="service-card">
+            <h3>🔧 Fertigung & Technik</h3>
+            <ul>
+                <li>Industriemechaniker</li>
+                <li>Mechatroniker</li>
+                <li>Maschinen- & Anlagenführer</li>
+                <li>Zerspanungsmechaniker (CNC)</li>
+                <li>Schlosser / Metallbauer</li>
+                <li>Elektroniker für Betriebstechnik</li>
+                <li>Produktionstechnische Fachkräfte</li>
+            </ul>
         </div>
-
-        <button class="accordion">Datenschutz</button>
-        <div class="panel">
-            <p>Wir respektieren Ihre Privatsphäre und verarbeiten personenbezogene Daten nur im Rahmen der gesetzlichen Vorschriften. Ihre Daten werden nicht an Dritte weitergegeben und nur zur Bearbeitung Ihrer Anfragen genutzt.</p>
+        <div class="service-card">
+            <h3>🏭 Fertigung & Montage</h3>
+            <ul>
+                <li>Maschinenbediener</li>
+                <li>Montagemitarbeiter</li>
+                <li>Produktionsmitarbeiter</li>
+            </ul>
         </div>
-        <p>&copy; 2025 effectrecruiting</p>
-    </footer>
+        <div class="service-card">
+            <h3>📦 Logistik & Lager</h3>
+            <ul>
+                <li>Staplerfahrer</li>
+                <li>Fachlageristen</li>
+                <li>Kommissionierer</li>
+                <li>Versandmitarbeiter</li>
+                <li>Produktionshelfer & Saisonkräfte</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        for (var i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
-    </script>
+<!-- Kontaktformular -->
+<section id="kontakt" class="contact-form">
+    <h2>Kontaktieren Sie uns</h2>
+    <div class="form-success" id="form-success">Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.</div>
+    <form id="contactForm" action="https://formspree.io/f/xldykngv" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="_replyto" required>
+
+        <label for="firma">Firma</label>
+        <input type="text" id="firma" name="firma">
+
+        <label for="message">Nachricht</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Nachricht senden</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <button class="accordion">Impressum</button>
+    <div class="panel">
+        <p>effectrecruiting Inhaber: Beder Amer, Einzelunternehmen<br>
+        Saatwinkler Damm 123, 13629 Berlin<br>
+        Keine USt-ID<br>
+        Vertreten durch: Beder Amer<br>
+        E-Mail: info@effectrecruiting.com</p>
+    </div>
+
+    <button class="accordion">Datenschutz</button>
+    <div class="panel">
+        <p>Wir respektieren Ihre Privatsphäre und verarbeiten personenbezogene Daten nur im Rahmen der gesetzlichen Vorschriften. Ihre Daten werden nicht an Dritte weitergegeben und nur zur Bearbeitung Ihrer Anfragen genutzt.</p>
+    </div>
+    <p>&copy; 2025 effectrecruiting</p>
+</footer>
+
+<script>
+    // Footer Accordion
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            panel.style.display = panel.style.display === "block" ? "none" : "block";
+        });
+    }
+
+    // Formspree Success Message
+    const form = document.getElementById('contactForm');
+    const successDiv = document.getElementById('form-success');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                successDiv.style.display = 'block';
+                form.reset();
+            } else {
+                response.json().then(data => {
+                    alert(data.error || "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später.");
+                });
+            }
+        }).catch(error => {
+            alert("Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später.");
+        });
+    });
+</script>
 
 </body>
 </html>
-
