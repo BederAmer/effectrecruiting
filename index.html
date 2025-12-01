@@ -1,430 +1,572 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>effectrecruiting – Fachkräfte für Industrie, Produktion & Logistik</title>
-<style>
-  :root{
-    --brand:#1a2b5b;
-    --brand-dark:#0f1a3b;
-    --accent:#f1c40f;
-    --card:#f9f9f9;
-    --muted:#666;
-    --radius:12px;
-    --container:1200px;
-  }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>effectrecruiting — Personalvermittlung für Industrie, Produktion & Logistik</title>
+  <meta name="description" content="EffectRecruiting findet operative Fachkräfte für Industrie, Produktion und Logistik. Schnell, seriös und spezialisiert auf Industrieprofile wie Mechatroniker, Industriemechaniker, Staplerfahrer." />
+  <meta name="author" content="Beder Amer — effectrecruiting" />
+  <meta property="og:title" content="effectrecruiting — Fachkräfte für Industrie, Produktion & Logistik" />
+  <meta property="og:description" content="Spezialisierte Personalvermittlung für Industrie, Produktion & Logistik. Schnelle Besetzung, geprüfte Kandidaten, ein Ansprechpartner." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#162447" />
 
-  /* Reset-ish */
-  *{box-sizing:border-box}
-  body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin:0;
-    padding:0;
-    color:#222;
-    background:#fff;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.5;
-  }
+  <!-- Google Font (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  /* Header */
-  header{
-    background:var(--brand);
-    color:#fff;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 8px rgba(0,0,0,0.12);
-  }
-  nav{
-    max-width:var(--container);
-    margin:0 auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:16px;
-  }
-  .logo{font-weight:800; font-size:1.25rem; letter-spacing:0.2px}
-  .nav-links a{
-    color:#fff;
-    text-decoration:none;
-    font-weight:700;
-    margin-left:20px;
-    font-size:0.95rem;
-    transition:color .18s;
-  }
-  .nav-links a:hover{color:var(--accent)}
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --muted:#6c7280;
+      --brand:#162447;         /* deep navy */
+      --brand-2:#0f2340;      /* darker */
+      --accent:#ffb703;       /* warm accent */
+      --radius:14px;
+      --container:1100px;
+      --glass: rgba(255,255,255,0.6);
+      --elev: 0 10px 30px rgba(18,24,40,0.06);
+      --max-width:1200px;
+      color-scheme: light;
+      font-synthesis: none;
+    }
 
-  /* Hero */
-  .hero{
-    text-align:center;
-    padding:72px 20px;
-    background:linear-gradient(180deg,#ffffff 0%, #f6f7fb 100%);
-  }
-  .hero .container{max-width:var(--container); margin:0 auto;}
-  .hero h1{
-    color:var(--brand);
-    font-size:2.6rem;
-    margin:0 0 12px;
-    font-weight:800;
-  }
-  .hero p{
-    color:#444;
-    max-width:820px;
-    margin:0 auto 24px;
-    font-size:1.1rem;
-  }
-  .hero .actions{margin-top:18px}
-  .btn{
-    display:inline-block;
-    background:var(--brand);
-    color:#fff;
-    padding:12px 22px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:800;
-    margin:6px;
-    transition:all .18s;
-  }
-  .btn:hover{background:var(--brand-dark); transform:translateY(-3px)}
+    /* Reset + base */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,var(--bg), #ffffff 60%);
+      color:#0b1320;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      -webkit-text-size-adjust:100%;
+    }
 
-  /* Section container */
-  section{padding:48px 20px}
-  section .inner{max-width:var(--container); margin:0 auto}
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
 
-  section h2{
-    text-align:center;
-    color:var(--brand);
-    margin-bottom:28px;
-    font-size:1.8rem;
-  }
+    /* Container */
+    .wrap{max-width:var(--container); margin:0 auto; padding:0 20px}
 
-  /* Cards layout */
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:18px;
-  }
-  .card{
-    background:var(--card);
-    padding:20px;
-    border-radius:var(--radius);
-    box-shadow:0 6px 18px rgba(10,15,40,0.06);
-  }
-  .card h3{margin:0 0 8px; color:var(--brand); font-size:1.05rem}
-  .card ul{padding-left:18px; margin:8px 0 0; color:var(--muted)}
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:60;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(21,32,64,0.9), rgba(21,32,64,0.85));
+      color:#fff;
+      box-shadow:0 6px 18px rgba(8,12,24,0.08);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:16px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; font-weight:800; font-size:1.05rem;
+    }
+    .brand .logo-mark{
+      width:44px; height:44px; border-radius:10px; display:grid; place-items:center;
+      background:linear-gradient(135deg,var(--accent), #ff8a00);
+      color:var(--brand-2); font-weight:900;
+      box-shadow: 0 6px 18px rgba(255,183,3,0.12), inset 0 -6px 18px rgba(255,255,255,0.12);
+    }
+    nav .nav-links{
+      display:flex; gap:18px; align-items:center;
+    }
+    nav .nav-links a{
+      color:rgba(255,255,255,0.92);
+      font-weight:600; font-size:0.95rem; padding:6px 10px; border-radius:8px;
+      transition:background .12s, transform .12s;
+    }
+    nav .nav-links a:hover{ background: rgba(255,255,255,0.05); transform:translateY(-2px) }
 
-  /* Benefits */
-  .benefit-card p{margin:6px 0 0; color:#444}
+    .cta-phone{
+      background:transparent; border:1px solid rgba(255,255,255,0.08);
+      color:#fff; padding:8px 12px; border-radius:10px; font-weight:700;
+      display:inline-flex; gap:8px; align-items:center;
+      transition:transform .12s, background .12s;
+    }
+    .cta-phone:hover{ transform:translateY(-3px); background:rgba(255,255,255,0.04) }
 
-  /* Process steps */
-  .process-card p{margin:8px 0 0; color:#444}
+    /* Mobile nav toggle */
+    .hamburger{display:none; border:0; background:transparent; color:#fff}
+    @media (max-width:880px){
+      .nav .nav-links{ display:none }
+      .hamburger{ display:inline-flex; align-items:center; gap:8px }
+    }
 
-  /* Contact form */
-  .contact-wrap{display:grid; grid-template-columns:1fr; gap:20px; align-items:start}
-  @media(min-width:900px){ .contact-wrap{grid-template-columns:380px 1fr} }
+    /* Hero */
+    .hero{
+      padding:56px 0;
+      display:grid;
+      grid-template-columns: 1fr 460px;
+      gap:28px;
+      align-items:center;
+    }
+    @media(max-width:980px){ .hero{ grid-template-columns:1fr } }
+    .hero-left{ padding:18px 0; }
+    .eyebrow{display:inline-block; background:#eaf3ff; color:var(--brand-2); padding:6px 10px; border-radius:999px; font-weight:700; font-size:0.86rem; margin-bottom:14px}
+    h1{
+      font-size:2.1rem; margin:0 0 12px; line-height:1.05; color:var(--brand-2);
+      letter-spacing:-0.6px;
+    }
+    p.lead{ margin:0 0 20px; color:var(--muted); max-width:60ch; font-size:1rem }
+    .hero-actions{ display:flex; gap:12px; margin-top:10px; flex-wrap:wrap }
+    .btn{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:12px 18px; border-radius:12px; font-weight:800; cursor:pointer; border:0;
+    }
+    .btn-primary{ background:linear-gradient(90deg,var(--brand-2), var(--brand)); color:#fff; box-shadow:var(--elev) }
+    .btn-outline{ background:transparent; border:1px solid rgba(7,15,30,0.06); color:var(--brand-2) }
 
-  .contact-card{
-    background:var(--card);
-    padding:22px;
-    border-radius:14px;
-    box-shadow:0 6px 20px rgba(10,15,40,0.06);
-  }
+    /* Hero illustration card (SVG inline) */
+    .hero-illustration{
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(246,248,252,0.9));
+      border-radius:18px; padding:22px; box-shadow:0 10px 30px rgba(8,12,24,0.06); display:flex; align-items:center; justify-content:center;
+    }
+    .stat-row{ display:flex; gap:12px; margin-top:18px; flex-wrap:wrap }
+    .stat{
+      background:var(--card); padding:12px 16px; border-radius:12px; box-shadow:0 6px 18px rgba(12,18,36,0.04);
+      display:flex; flex-direction:column; align-items:flex-start; gap:6px;
+    }
+    .stat strong{ font-size:1.05rem; color:var(--brand-2) }
+    .stat span{ font-size:0.85rem; color:var(--muted) }
 
-  label{display:block; font-weight:700; color:var(--brand); margin-bottom:6px; font-size:0.95rem}
-  input[type="text"], input[type="email"], textarea{
-    width:100%;
-    padding:12px 14px;
-    border:1px solid #d1d6df;
-    border-radius:10px;
-    font-size:1rem;
-    margin-bottom:12px;
-    outline:none;
-    transition:border-color .15s, box-shadow .15s;
-  }
-  input:focus, textarea:focus{border-color:var(--brand); box-shadow:0 0 8px rgba(26,43,91,0.08)}
+    /* Sections */
+    section{ padding:48px 0 }
+    section h2{ text-align:center; color:var(--brand-2); margin:0 0 20px; font-size:1.5rem }
 
-  .submit-btn{
-    background:var(--brand);
-    color:#fff;
-    border:none;
-    padding:12px 18px;
-    border-radius:10px;
-    font-weight:800;
-    cursor:pointer;
-    width:100%;
-    font-size:1rem;
-  }
-  .submit-btn:hover{background:var(--brand-dark)}
+    .grid{
+      display:grid; gap:18px;
+      grid-template-columns: repeat(3,1fr);
+    }
+    @media(max-width:980px){ .grid{ grid-template-columns: repeat(2,1fr) } }
+    @media(max-width:640px){ .grid{ grid-template-columns: 1fr } }
 
-  .note{font-size:0.95rem; color:var(--muted); margin-top:8px}
+    .card{
+      background:var(--card); border-radius:14px; padding:18px; box-shadow:0 8px 26px rgba(12,18,36,0.04);
+      border:1px solid rgba(11,18,34,0.03)
+    }
+    .card h3{ margin:0 0 8px; color:var(--brand-2) }
+    .card p{ margin:0; color:var(--muted) }
 
-  /* Success box */
-  .form-success{
-    display:none;
-    padding:12px;
-    background:#dff3e8;
-    color:#0b713f;
-    border-radius:10px;
-    font-weight:700;
-    text-align:center;
-  }
+    /* Services list - icons with label */
+    .service-list{ display:flex; flex-direction:column; gap:12px }
+    .service-item{ display:flex; gap:12px; align-items:flex-start }
+    .icon-box{ min-width:44px; height:44px; border-radius:10px; display:grid; place-items:center; background:linear-gradient(135deg,#eaf3ff,#f9f6ef) }
+    .service-item strong{ display:block; font-weight:700; color:var(--brand-2) }
 
-  /* Footer */
-  footer{
-    background:var(--brand);
-    color:#fff;
-    padding:34px 20px;
-    margin-top:36px;
-  }
-  .accordion{
-    cursor:pointer;
-    padding:10px;
-    width:100%;
-    border:none;
-    text-align:left;
-    outline:none;
-    background:rgba(255,255,255,0.05);
-    color:#fff;
-    border-radius:8px;
-    font-weight:700;
-    margin-top:12px;
-  }
-  .panel{
-    display:none;
-    padding:12px;
-    background:rgba(255,255,255,0.04);
-    color:#fff;
-    margin-top:10px;
-    border-radius:8px;
-  }
+    /* Process steps horizontal */
+    .steps{ display:flex; gap:12px; align-items:stretch; flex-wrap:wrap; justify-content:center }
+    .step{ flex:1; min-width:180px; padding:16px; border-radius:12px; text-align:center; background:linear-gradient(180deg,#fff,#fbfdff); border:1px solid rgba(10,16,30,0.03) }
+    .step .num{ background:linear-gradient(90deg,var(--accent), #ff8a00); color:#081024; display:inline-block; padding:8px 12px; border-radius:999px; font-weight:800; margin-bottom:8px }
 
-  /* small screens adjustments */
-  @media(max-width:720px){
-    .hero h1{font-size:1.8rem}
-  }
-</style>
+    /* About / trust */
+    .trust-row{ display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap }
+    .trust-item{ display:flex; gap:12px; align-items:center; background:linear-gradient(180deg,#fff,#fcfdff); padding:12px 14px; border-radius:12px; box-shadow:0 8px 20px rgba(10,18,30,0.03) }
+    .trust-item small{ color:var(--muted) }
+
+    /* Contact area */
+    .contact-grid{ display:grid; grid-template-columns: 380px 1fr; gap:18px }
+    @media(max-width:980px){ .contact-grid{ grid-template-columns: 1fr } }
+    .contact-card{ padding:18px; border-radius:14px; background:var(--card); box-shadow:0 10px 30px rgba(12,18,36,0.04) }
+    .contact-card h3{ margin:0 0 6px }
+    .meta{ color:var(--muted); font-size:0.95rem }
+
+    label{ display:block; font-weight:700; margin-bottom:8px; color:var(--brand-2) }
+    input, textarea, select{
+      width:100%; padding:12px 14px; border-radius:10px; border:1px solid rgba(10,16,30,0.06); font-size:1rem; outline:none;
+    }
+    input:focus, textarea:focus { box-shadow:0 6px 20px rgba(8,12,24,0.06); border-color:var(--brand-2) }
+
+    .consent{ font-size:0.9rem; color:var(--muted); display:flex; gap:8px; align-items:center; margin-top:8px }
+    .btn-submit{ width:100%; padding:12px 14px; border-radius:12px; border:0; font-weight:800; background:linear-gradient(90deg,var(--brand-2), var(--brand)); color:#fff; cursor:pointer }
+
+    .form-success{ display:none; padding:12px; border-radius:10px; background:#eaffef; color:#074d2b; font-weight:700; margin-bottom:12px }
+
+    /* Footer */
+    footer{ padding:28px 0; background:linear-gradient(180deg,#0b1730,#071329); color:#fff }
+    footer .foot-grid{ display:flex; gap:18px; justify-content:space-between; align-items:center; flex-wrap:wrap }
+    footer small{ color:rgba(255,255,255,0.65) }
+
+    /* Accessibility helpers */
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }
+
+    /* subtle animation */
+    .float{ animation:float 6s ease-in-out infinite }
+    @keyframes float { 0%{transform:translateY(0)} 50%{transform:translateY(-6px)} 100%{transform:translateY(0)} }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Structured data for LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RecruitingAgency",
+    "name": "effectrecruiting",
+    "founder": "Beder Amer",
+    "description": "Spezialisierte Personalvermittlung für Industrie, Produktion und Logistik. Fokus: operative Fachkräfte wie Mechatroniker, Industriemechaniker, Staplerfahrer.",
+    "telephone": "+49 157 39283779",
+    "email": "info@effectrecruiting.com",
+    "url": "https://effectrecruiting.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Saatwinkler Damm 123",
+      "addressLocality": "Berlin",
+      "postalCode": "13629",
+      "addressCountry": "DE"
+    }
+  }
+  </script>
+
+  <!-- Header / Navigation -->
   <header>
-    <nav>
-      <div class="logo">effectrecruiting</div>
-      <div class="nav-links">
+    <div class="wrap nav" role="navigation" aria-label="Hauptnavigation">
+      <div class="brand" aria-hidden="false">
+        <div class="logo-mark" aria-hidden="true">ER</div>
+        <div>
+          <div style="font-weight:800">effectrecruiting</div>
+          <div style="font-size:0.82rem; color:rgba(255,255,255,0.75); margin-top:2px">Industrie • Produktion • Logistik</div>
+        </div>
+      </div>
+
+      <nav aria-label="Links" class="nav-links">
         <a href="#home">Home</a>
         <a href="#leistungen">Leistungen</a>
         <a href="#prozess">Ablauf</a>
         <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <div style="display:flex; gap:12px; align-items:center">
+        <a class="cta-phone" href="tel:+4915739283779" aria-label="Anrufen">📞 +49 157 39283779</a>
+        <button class="hamburger" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileMenu(event)">
+          ☰ <span class="sr-only">Menü öffnen</span>
+        </button>
       </div>
-    </nav>
+    </div>
+
+    <!-- Mobile menu (hidden on desktop) -->
+    <div id="mobile-menu" style="display:none; padding:12px 20px; background:linear-gradient(180deg,#081229,#071127)">
+      <div style="display:flex; flex-direction:column; gap:10px">
+        <a href="#home" style="color:#fff; font-weight:700">Home</a>
+        <a href="#leistungen" style="color:#fff; font-weight:700">Leistungen</a>
+        <a href="#prozess" style="color:#fff; font-weight:700">Ablauf</a>
+        <a href="#kontakt" style="color:#fff; font-weight:700">Kontakt</a>
+      </div>
+    </div>
   </header>
 
   <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="container">
-      <h1>Fachkräfte, die wirklich passen</h1>
-      <p>Wir unterstützen Industrie-, Produktions- und Logistikbetriebe dabei, qualifizierte Mitarbeiter zu finden – schnell, zuverlässig und ohne unnötigen Aufwand für Ihr Unternehmen.</p>
-      <div class="actions">
-        <a class="btn" href="#leistungen">Leistungen ansehen</a>
-        <a class="btn" href="#kontakt">Kontakt aufnehmen</a>
-      </div>
-    </div>
-  </section>
+  <main>
+    <section id="home" class="wrap hero" aria-labelledby="hero-heading">
+      <div class="hero-left">
+        <span class="eyebrow">Spezialisiert • Schnell • Verlässlich</span>
+        <h1 id="hero-heading">Fachkräfte für Industrie, Produktion &amp; Logistik — die tatsächlich passen</h1>
+        <p class="lead">EffectRecruiting unterstützt mittelständische Fertigung, Logistikzentren und Produktionsbetriebe dabei, vakante Schichten und Stellen kurzfristig sowie langfristig mit geprüften, fachlich passenden Kandidaten zu besetzen — ohne Admin-Aufwand für Ihre Personalabteilung.</p>
 
-  <!-- Leistungen -->
-  <section id="leistungen">
-    <div class="inner">
-      <h2>Unser Leistungsspektrum</h2>
-      <div class="grid services">
-        <div class="card service-card">
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#kontakt" aria-label="Kontakt aufnehmen">Kontakt aufnehmen</a>
+          <a class="btn btn-outline" href="#leistungen" aria-label="Leistungen ansehen">Leistungen ansehen</a>
+        </div>
+
+        <div class="stat-row" role="list" aria-label="Statistiken">
+          <div class="stat" role="listitem">
+            <strong>24–72h</strong>
+            <span>erste Kandidatenvorschläge (bei Eilbedarf)</span>
+          </div>
+          <div class="stat" role="listitem">
+            <strong>+250</strong>
+            <span>aktive Industrieprofile im Netzwerk</span>
+          </div>
+          <div class="stat" role="listitem">
+            <strong>1</strong>
+            <span>ein Ansprechpartner von Bedarf bis Einstellung</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Illustration: human mechanic figures (SVG vectors, no raster images) -->
+      <div class="hero-illustration float" aria-hidden="true">
+        <!-- Simple stylized workshop / worker illustration using inline SVG -->
+        <svg width="420" height="300" viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration: Mechaniker und Logistikmitarbeiter">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#eaf3ff"/>
+              <stop offset="1" stop-color="#fff2e6"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" x2="1">
+              <stop offset="0" stop-color="#162447"/>
+              <stop offset="1" stop-color="#0f2340"/>
+            </linearGradient>
+          </defs>
+
+          <!-- background card -->
+          <rect x="8" y="20" rx="18" width="404" height="262" fill="url(#g1)"/>
+          <!-- pallet -->
+          <rect x="46" y="198" width="120" height="20" rx="3" fill="#d1d6df"/>
+          <rect x="46" y="178" width="120" height="8" rx="2" fill="#c6cacf"/>
+          <!-- box -->
+          <rect x="74" y="150" width="70" height="46" rx="6" fill="#ffe8c7" stroke="#ffb703" stroke-width="1"/>
+
+          <!-- worker 1 (mechanic) -->
+          <g transform="translate(220,88)">
+            <ellipse cx="28" cy="8" rx="20" ry="14" fill="#f8d8c2"/>
+            <rect x="6" y="20" width="44" height="52" rx="8" fill="#0f2340" />
+            <rect x="2" y="56" width="16" height="36" rx="6" fill="#0f2340" />
+            <rect x="40" y="56" width="16" height="36" rx="6" fill="#0f2340" />
+            <!-- helmet -->
+            <rect x="14" y="-2" width="28" height="8" rx="4" fill="#ffb703" />
+            <!-- wrench -->
+            <path d="M6 36 L34 12" stroke="#95a1b4" stroke-width="6" stroke-linecap="round" />
+            <circle cx="6" cy="36" r="3" fill="#081024"/>
+          </g>
+
+          <!-- worker 2 (logistics) -->
+          <g transform="translate(310,120)">
+            <ellipse cx="18" cy="8" rx="14" ry="10" fill="#f8d8c2"/>
+            <rect x="6" y="20" width="32" height="46" rx="8" fill="#123c66" />
+            <rect x="0" y="58" width="14" height="28" rx="6" fill="#123c66" />
+            <rect x="24" y="58" width="14" height="28" rx="6" fill="#123c66" />
+            <rect x="-12" y="12" width="12" height="6" rx="2" fill="#ffb703" transform="rotate(-20 0 0)" />
+            <!-- box on hand -->
+            <rect x="-32" y="36" width="40" height="28" rx="4" fill="#fff0d9" stroke="#ffb703" stroke-width="1"/>
+          </g>
+
+          <!-- machine / gear element -->
+          <g transform="translate(56,48)">
+            <circle cx="0" cy="0" r="22" fill="#fff" stroke="#cbd6e6" stroke-width="2" />
+            <path d="M-6 -6 L6 6 M6 -6 L-6 6" stroke="#95a1b4" stroke-width="2" stroke-linecap="round"/>
+          </g>
+
+          <!-- subtle brand -->
+          <text x="36" y="48" fill="#162447" style="font-weight:800; font-size:18px">effectrecruiting</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="leistungen" class="wrap" aria-labelledby="services-heading">
+      <h2 id="services-heading">Leistungsspektrum</h2>
+
+      <div class="grid" role="list" aria-label="Unsere Services">
+        <div class="card" role="listitem">
           <h3>🔧 Fachkräfte Technik &amp; Produktion</h3>
-          <ul>
-            <li>Industriemechaniker</li>
-            <li>Mechatroniker</li>
-            <li>Maschinen- &amp; Anlagenführer</li>
-            <li>Zerspanungsmechaniker (CNC)</li>
-            <li>Schlosser / Metallbauer</li>
-            <li>Elektroniker für Betriebstechnik</li>
-          </ul>
+          <div class="service-list" aria-hidden="false">
+            <div class="service-item"><div class="icon-box">⚙️</div><div><strong>Industriemechaniker</strong><small class="meta">Zerspanung, Montage, Instandhaltung</small></div></div>
+            <div class="service-item"><div class="icon-box">🔩</div><div><strong>Mechatroniker</strong><small class="meta">Feinmechanik & Automatisierung</small></div></div>
+            <div class="service-item"><div class="icon-box">🛠️</div><div><strong>Elektroniker</strong><small class="meta">Betriebstechnik & Steuerung</small></div></div>
+          </div>
         </div>
-        <div class="card service-card">
+
+        <div class="card" role="listitem">
           <h3>🏭 Fertigung &amp; Montage</h3>
-          <ul>
-            <li>Maschinenbediener</li>
-            <li>Montagemitarbeiter</li>
-            <li>Produktionsmitarbeiter</li>
-          </ul>
+          <div class="service-list">
+            <div class="service-item"><div class="icon-box">🔁</div><div><strong>Maschinenbediener</strong><small class="meta">Serienfertigung & Anlagenpflege</small></div></div>
+            <div class="service-item"><div class="icon-box">🧰</div><div><strong>Montagemitarbeiter</strong><small class="meta">Qualitätsorientiert</small></div></div>
+          </div>
         </div>
-        <div class="card service-card">
+
+        <div class="card" role="listitem">
           <h3>📦 Logistik &amp; Lager</h3>
-          <ul>
-            <li>Staplerfahrer</li>
-            <li>Fachlageristen</li>
-            <li>Kommissionierer</li>
-            <li>Versandmitarbeiter</li>
-            <li>Produktionshelfer &amp; Saisonkräfte</li>
-          </ul>
+          <div class="service-list">
+            <div class="service-item"><div class="icon-box">🚜</div><div><strong>Staplerfahrer</strong><small class="meta">Führerschein & Praxis geprüft</small></div></div>
+            <div class="service-item"><div class="icon-box">📦</div><div><strong>Fachlageristen</strong><small class="meta">Warenein-/ausgang, Kommissionierung</small></div></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Benefits -->
-  <section id="benefits">
-    <div class="inner">
-      <h2>Warum Unternehmen mit uns arbeiten</h2>
-      <div class="grid benefits">
-        <div class="card benefit-card">
-          <h3>🎯 Passgenaue Kandidaten</h3>
-          <p>Wir sprechen Kandidaten aktiv an, prüfen fachliche Voraussetzungen und Soft-Fit – Sie erhalten nur geprüfte Profile.</p>
+    <!-- Benefits / Trust -->
+    <section id="benefits" class="wrap" aria-labelledby="benefits-heading">
+      <h2 id="benefits-heading">Warum Unternehmen uns wählen</h2>
+
+      <div style="display:grid; gap:14px; grid-template-columns: 1fr 1fr" aria-hidden="false">
+        <div class="card">
+          <h3>🎯 Passgenau & geprüft</h3>
+          <p>Fachlich geprüfte Profile plus Soft-Fit-Bewertung. Du bekommst nur Kandidaten, die technisch und kulturell passen.</p>
         </div>
-        <div class="card benefit-card">
+        <div class="card">
           <h3>⚡ Schnelle Besetzung</h3>
-          <p>Für dringende Vakanzen liefern wir oft innerhalb von Tagen statt Wochen passende Vorschläge.</p>
+          <p>Standardprozess: Briefing → Active Sourcing → 2–4 Kandidatenvorschläge. Bei Eilbedarf priorisiert.</p>
         </div>
-        <div class="card benefit-card">
-          <h3>💬 Ein Ansprechpartner</h3>
-          <p>Direkte Kommunikation, transparente Abläufe und klare Konditionen – kein Verwaltungsaufwand auf Ihrer Seite.</p>
+        <div class="card">
+          <h3>💬 Ein direkter Ansprechpartner</h3>
+          <p>Du kommunizierst mit einer Person vom Briefing bis zur Einstellung — klare Verantwortung, kurze Wege.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process -->
-  <section id="prozess">
-    <div class="inner">
-      <h2>Unser Ablauf – klar & unkompliziert</h2>
-      <div class="grid process-steps">
-        <div class="card process-card">
-          <h3>1. Bedarfsgespräch</h3>
-          <p>Wir klären Anforderungen, Schichtmodell, Gehalt und Starttermin – kurz, präzise und zielorientiert.</p>
-        </div>
-        <div class="card process-card">
-          <h3>2. Active Sourcing</h3>
-          <p>Gezieltes Ansprechen von Kandidaten über Jobportale, soziale Gruppen und direkte Kontakte.</p>
-        </div>
-        <div class="card process-card">
-          <h3>3. Vorstellung</h3>
-          <p>Sie erhalten nur 2–4 vorqualifizierte Profile mit kurzem Screening-Protokoll.</p>
-        </div>
-        <div class="card process-card">
-          <h3>4. Einstellung</h3>
-          <p>Wir begleiten den finalen Schritt bis zur Besetzung und kümmern uns um die Abstimmungen.</p>
+        <div class="card">
+          <h3>✅ Rechtssicher & transparent</h3>
+          <p>Transparente Konditionen, DSGVO-konformes Handling von Bewerberdaten und klare Vertragsbedingungen.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About -->
-  <section id="about">
-    <div class="inner">
-      <h2>Über effectrecruiting</h2>
-      <div class="card about">
-        <p>Effect Recruiting ist spezialisiert auf operative Fach- und Arbeitskräfte für Industrie, Produktion und Logistik. Wir kombinieren praxisnahe Ansprache mit schnellem Screening – so reduzieren wir Ihre Zeit bis zur Einstellung deutlich.</p>
-        <p class="note">Startklar für kurzfristige Vakanzen oder längerfristige Personalplanung – wir finden die Mitarbeiter, die in Ihrer Produktion oder Ihrem Lager wirklich funktionieren.</p>
+    <!-- Process -->
+    <section id="prozess" class="wrap" aria-labelledby="process-heading">
+      <h2 id="process-heading">Unser Ablauf — kurz & effizient</h2>
+
+      <div class="steps" role="list" aria-label="Ablauf in Schritten">
+        <div class="step" role="listitem"><div class="num">1</div><strong>Bedarf &amp; KPI</strong><p style="margin-top:8px;color:var(--muted)">Schichtmodell, Qualifikation, Soft-Skills, Starttermin.</p></div>
+        <div class="step" role="listitem"><div class="num">2</div><strong>Active Sourcing</strong><p style="margin-top:8px;color:var(--muted)">Gezielte Ansprache, berufsspezifische Kanäle & Partnernetzwerke.</p></div>
+        <div class="step" role="listitem"><div class="num">3</div><strong>Vorstellung</strong><p style="margin-top:8px;color:var(--muted)">2–4 geprüfte Profile mit Screening-Report.</p></div>
+        <div class="step" role="listitem"><div class="num">4</div><strong>Onboarding</strong><p style="margin-top:8px;color:var(--muted)">Betreuung bis zum Eintritt und Wochen-Check.</p></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact area -->
-  <section id="kontakt">
-    <div class="inner">
-      <h2>Kontaktieren Sie uns</h2>
+    <!-- About / founder -->
+    <section id="about" class="wrap" aria-labelledby="about-heading">
+      <h2 id="about-heading">Über effectrecruiting</h2>
 
-      <div class="contact-wrap">
-        <!-- Kontakt Info -->
-        <div class="contact-card">
-          <h3>Beder Amer</h3>
-          <p>📞 0157 39283779</p>
-          <p class="note">Erreichbarkeit: Mo – Fr 08:00–20:00 Uhr, Sa - So 10:00–20:00 Uhr</p>
+      <div style="display:flex; gap:18px; align-items:center; flex-wrap:wrap">
+        <div style="flex:1; min-width:260px">
+          <div class="card">
+            <h3>Beder Amer — Gründer</h3>
+            <p class="meta">Spezialisiert auf operative Personalvermittlung für Industrie & Logistik. Pragmatisch, datenbasiert und hands-on.</p>
+            <p style="margin-top:10px;color:var(--muted)">Ich kombiniere Praxisverständnis aus produzierenden Betrieben mit einem schlanken Rekrutierungsprozess — damit Sie schnell und sicher besetzen können.</p>
+          </div>
         </div>
 
-        <!-- FORM (Formspree) -->
-        <div class="contact-card" aria-labelledby="contactForm">
-          <div class="form-success" id="form-success">Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.</div>
-
-          <form id="contactForm" action="https://formspree.io/f/xldykngv" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="_replyto" required>
-
-            <label for="firma">Firma</label>
-            <input type="text" id="firma" name="firma">
-
-            <label for="message">Nachricht</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit" class="submit-btn">Nachricht senden</button>
-          </form>
-
-          <p class="note" style="margin-top:12px">Alternativ erreichen Sie uns telefonisch: <a href="tel:+4915739283779" style="color:var(--brand); text-decoration:none;">0157 39283779</a></p>
+        <div style="flex:1; min-width:300px">
+          <div class="card">
+            <h3>Unser Qualitätsversprechen</h3>
+            <p class="meta">Prüfprozesse, Kandidaten-Referenzchecks und transparente Konditionen — keine versteckten Kosten.</p>
+            <div style="display:flex; gap:8px; margin-top:12px">
+              <div class="trust-item"><strong>✓</strong><small>Prüfung von Dokumenten & Qualifikation</small></div>
+              <div class="trust-item"><strong>✓</strong><small>Schnelle Kommunikation</small></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Contact -->
+    <section id="kontakt" class="wrap" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Kontakt</h2>
+
+      <div class="contact-grid" role="region" aria-label="Kontaktbereich">
+        <aside class="contact-card" aria-labelledby="contact-info">
+          <h3 id="contact-info">Beder Amer</h3>
+          <p class="meta">Inhaber — effectrecruiting</p>
+          <p style="margin-top:8px"><strong>Telefon:</strong> <a href="tel:+4915739283779">+49 157 39283779</a></p>
+          <p><strong>E-Mail:</strong> <a href="mailto:info@effectrecruiting.com">info@effectrecruiting.com</a></p>
+          <p style="margin-top:12px; color:var(--muted)">Erreichbarkeit: Mo–Fr 08:00–20:00, Sa–So 10:00–20:00</p>
+
+          <div style="margin-top:14px">
+            <strong style="display:block; margin-bottom:8px">Kurzprofil</strong>
+            <small class="meta">Spezialisierung: Industrie, Fertigung, Lager & Logistik — Besetzung von Schichtstellen, Facharbeitern und technischen Rollen.</small>
+          </div>
+        </aside>
+
+        <form id="contactForm" class="contact-card" action="https://formspree.io/f/xldykngv" method="POST" aria-labelledby="contact-form-heading">
+          <h3 id="contact-form-heading">Anfrage senden</h3>
+          <div class="form-success" id="form-success">Vielen Dank — wir melden uns innerhalb von 24 Stunden.</div>
+
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="Max Mustermann" />
+
+          <label for="email">E-Mail</label>
+          <input id="email" name="_replyto" type="email" required placeholder="name@firma.de" />
+
+          <label for="firma">Firma (optional)</label>
+          <input id="firma" name="firma" type="text" placeholder="Firma GmbH" />
+
+          <label for="vacancy">Vakanz / Rolle</label>
+          <select id="vacancy" name="vacancy">
+            <option value="">Bitte auswählen</option>
+            <option>Industriemechaniker</option>
+            <option>Mechatroniker</option>
+            <option>Staplerfahrer</option>
+            <option>Produktionsmitarbeiter</option>
+            <option>Sonstiges</option>
+          </select>
+
+          <label for="message">Kurzbeschreibung / Anforderungen</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Kurz: Schichtmodell, Startdatum, Anforderungen"></textarea>
+
+          <div class="consent">
+            <input id="consent" type="checkbox" required />
+            <label for="consent" style="margin:0">Ich stimme zu, dass meine Daten zur Beantwortung dieser Anfrage verarbeitet werden. (DSGVO)</label>
+          </div>
+
+          <input type="hidden" name="_subject" value="Neue Anfrage von Website" />
+          <button class="btn-submit" type="submit">Anfrage senden</button>
+
+          <p style="margin-top:10px; color:var(--muted)">Alternativ: <a href="tel:+4915739283779">+49 157 39283779</a></p>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
-    <div style="max-width:var(--container); margin:0 auto; text-align:left;">
-      <button class="accordion">Impressum</button>
-      <div class="panel">
-        <p style="margin:0; line-height:1.4;">effectrecruiting Inhaber: Beder Amer, Einzelunternehmen<br>
-        Saatwinkler Damm 123, 13629 Berlin<br>
-        Keine USt-ID<br>
-        Vertreten durch: Beder Amer<br>
-        E-Mail: info@effectrecruiting.com</p>
+  <footer role="contentinfo">
+    <div class="wrap foot-grid" style="align-items:center">
+      <div>
+        <strong style="color:#fff">effectrecruiting</strong>
+        <div style="margin-top:6px"><small>Inhaber: Beder Amer — Saatwinkler Damm 123, 13629 Berlin</small></div>
       </div>
 
-      <button class="accordion">Datenschutz</button>
-      <div class="panel">
-        <p style="margin:0; line-height:1.4;">Wir respektieren Ihre Privatsphäre und verarbeiten personenbezogene Daten nur im Rahmen der gesetzlichen Vorschriften. Ihre Daten werden nicht an Dritte weitergegeben und nur zur Bearbeitung Ihrer Anfragen genutzt.</p>
+      <div style="text-align:right">
+        <small>&copy; 2025 effectrecruiting</small>
+        <div style="margin-top:6px"><small><a href="#impressum" style="color:rgba(255,255,255,0.75)">Impressum</a> • <a href="#datenschutz" style="color:rgba(255,255,255,0.75)">Datenschutz</a></small></div>
       </div>
-
-      <p style="color:#fff; margin-top:16px; text-align:right;">&copy; 2025 effectrecruiting</p>
     </div>
   </footer>
 
-<script>
-  // Accordion
-  var acc = document.getElementsByClassName("accordion");
-  for (var i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      panel.style.display = panel.style.display === "block" ? "none" : "block";
-    });
-  }
+  <script>
+    // Mobile menu toggle
+    function toggleMobileMenu(e){
+      const btn = e.currentTarget;
+      const panel = document.getElementById('mobile-menu');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      panel.style.display = expanded ? 'none' : 'block';
+    }
 
-  // Formspree handling
-  const form = document.getElementById('contactForm');
-  const successDiv = document.getElementById('form-success');
+    // Simple Formspree handling with progressive enhancement
+    (function(){
+      const form = document.getElementById('contactForm');
+      const successDiv = document.getElementById('form-success');
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        successDiv.style.display = 'block';
-        form.reset();
-        setTimeout(()=>{ successDiv.style.display = 'none'; }, 5000);
-      } else {
-        response.json().then(data => {
-          alert(data.error || "Fehler beim Senden — bitte versuchen Sie es später.");
+      if(!form) return;
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const data = new FormData(form);
+        fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(async response => {
+          if(response.ok){
+            successDiv.style.display = 'block';
+            form.reset();
+            setTimeout(()=> successDiv.style.display = 'none', 7000);
+          } else {
+            let json = {};
+            try { json = await response.json(); } catch(err){}
+            alert(json.error || "Fehler beim Senden — bitte später erneut versuchen.");
+          }
+        }).catch(()=> {
+          alert("Fehler: Verbindung fehlgeschlagen. Bitte prüfen Sie Ihre Internetverbindung oder rufen Sie an.");
         });
+      });
+    })();
+
+    // Prefill telephone on mobile for convenience (minor enhancement)
+    (function(){
+      if(/Mobi|Android/i.test(navigator.userAgent)){
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        phoneLinks.forEach(a => a.setAttribute('rel','nofollow'));
       }
-    }).catch(() => {
-      alert("Fehler beim Senden — bitte prüfen Sie Ihre Verbindung.");
-    });
-  });
-</script>
+    })();
+  </script>
 
 </body>
 </html>
