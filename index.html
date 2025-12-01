@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>effectrecruiting – Fachkräfte für Industrie, Produktion & Logistik</title>
+<title>effectrecruiting – Personalvermittlung Metall & CNC-Fachkräfte</title>
 <style>
   :root{
     --brand:#1a2b5b;
@@ -15,16 +15,11 @@
     --container:1200px;
   }
 
-  /* Reset-ish */
-  *{box-sizing:border-box}
+  *{box-sizing:border-box;}
   body{
     font-family: Arial, Helvetica, sans-serif;
-    margin:0;
-    padding:0;
-    color:#222;
-    background:#fff;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
+    margin:0; padding:0; color:#222; background:#fff;
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     line-height:1.5;
   }
 
@@ -71,7 +66,7 @@
   }
   .hero p{
     color:#444;
-    max-width:820px;
+    max-width:720px;
     margin:0 auto 24px;
     font-size:1.1rem;
   }
@@ -89,10 +84,9 @@
   }
   .btn:hover{background:var(--brand-dark); transform:translateY(-3px)}
 
-  /* Section container */
+  /* Sections */
   section{padding:48px 20px}
   section .inner{max-width:var(--container); margin:0 auto}
-
   section h2{
     text-align:center;
     color:var(--brand);
@@ -100,7 +94,7 @@
     font-size:1.8rem;
   }
 
-  /* Cards layout */
+  /* Leistungsspektrum Grid */
   .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -108,18 +102,20 @@
   }
   .card{
     background:var(--card);
-    padding:20px;
+    padding:24px 20px;
     border-radius:var(--radius);
-    box-shadow:0 6px 18px rgba(10,15,40,0.06);
+    box-shadow:0 8px 24px rgba(10,15,40,0.06);
+    transition:transform .18s, box-shadow .18s;
   }
-  .card h3{margin:0 0 8px; color:var(--brand); font-size:1.05rem}
-  .card ul{padding-left:18px; margin:8px 0 0; color:var(--muted)}
+  .card:hover{transform:translateY(-4px); box-shadow:0 12px 30px rgba(10,15,40,0.08);}
+  .card h3{margin:0 0 12px; color:var(--brand); font-size:1.1rem}
+  .card ul{padding-left:18px; margin:8px 0 0; color:var(--muted); list-style:disc}
 
-  /* Benefits */
-  .benefit-card p{margin:6px 0 0; color:#444}
+  /* Optional note */
+  .optional{font-size:0.85rem; color:#999; font-style:italic; margin-top:6px;}
 
-  /* Process steps */
-  .process-card p{margin:8px 0 0; color:#444}
+  /* Benefits & Process */
+  .benefit-card p, .process-card p{margin:6px 0 0; color:#444}
 
   /* Contact form */
   .contact-wrap{display:grid; grid-template-columns:1fr; gap:20px; align-items:start}
@@ -131,7 +127,6 @@
     border-radius:14px;
     box-shadow:0 6px 20px rgba(10,15,40,0.06);
   }
-
   label{display:block; font-weight:700; color:var(--brand); margin-bottom:6px; font-size:0.95rem}
   input[type="text"], input[type="email"], textarea{
     width:100%;
@@ -160,7 +155,6 @@
 
   .note{font-size:0.95rem; color:var(--muted); margin-top:8px}
 
-  /* Success box */
   .form-success{
     display:none;
     padding:12px;
@@ -200,7 +194,6 @@
     border-radius:8px;
   }
 
-  /* small screens adjustments */
   @media(max-width:720px){
     .hero h1{font-size:1.8rem}
   }
@@ -208,185 +201,155 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <nav>
-      <div class="logo">effectrecruiting</div>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#leistungen">Leistungen</a>
-        <a href="#prozess">Ablauf</a>
-        <a href="#kontakt">Kontakt</a>
-      </div>
-    </nav>
-  </header>
+<!-- Header -->
+<header>
+  <nav>
+    <div class="logo">effectrecruiting</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#prozess">Ablauf</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </nav>
+</header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="container">
-      <h1>Fachkräfte, die wirklich passen</h1>
-      <p>Wir unterstützen Industrie-, Produktions- und Logistikbetriebe dabei, qualifizierte Mitarbeiter zu finden – schnell, zuverlässig und ohne unnötigen Aufwand für Ihr Unternehmen.</p>
-      <div class="actions">
-        <a class="btn" href="#leistungen">Leistungen ansehen</a>
-        <a class="btn" href="#kontakt">Kontakt aufnehmen</a>
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container">
+    <h1>Fachkräfte für Metall & CNC</h1>
+    <p>Wir vermitteln qualifizierte Fachkräfte für die Metallverarbeitung und CNC-Bearbeitung. Schnell, zuverlässig und passgenau für Ihre Produktion.</p>
+    <div class="actions">
+      <a class="btn" href="#leistungen">Leistungen ansehen</a>
+      <a class="btn" href="#kontakt">Kontakt aufnehmen</a>
+    </div>
+  </div>
+</section>
+
+<!-- Leistungen -->
+<section id="leistungen">
+  <div class="inner">
+    <h2>Unser Leistungsspektrum</h2>
+    <div class="grid services">
+      <div class="card service-card">
+        <h3>⚙️ Metallverarbeitung & CNC-Fachkräfte</h3>
+        <ul>
+          <li>Zerspanungsmechaniker</li>
+          <li>Industriemechaniker</li>
+          <li>CNC-Dreher / Fräser</li>
+          <li>CNC-Programmierer</li>
+          <li>Schlosser / Metallbauer</li>
+        </ul>
+        <p class="optional">Optional: Maschinen- & Anlagenführer</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Leistungen -->
-  <section id="leistungen">
-    <div class="inner">
-      <h2>Unser Leistungsspektrum</h2>
-      <div class="grid services">
-        <div class="card service-card">
-          <h3>🔧 Fachkräfte Technik &amp; Produktion</h3>
-          <ul>
-            <li>Industriemechaniker</li>
-            <li>Mechatroniker</li>
-            <li>Maschinen- &amp; Anlagenführer</li>
-            <li>Zerspanungsmechaniker (CNC)</li>
-            <li>Schlosser / Metallbauer</li>
-            <li>Elektroniker für Betriebstechnik</li>
-          </ul>
-        </div>
-        <div class="card service-card">
-          <h3>🏭 Fertigung &amp; Montage</h3>
-          <ul>
-            <li>Maschinenbediener</li>
-            <li>Montagemitarbeiter</li>
-            <li>Produktionsmitarbeiter</li>
-          </ul>
-        </div>
-        <div class="card service-card">
-          <h3>📦 Logistik &amp; Lager</h3>
-          <ul>
-            <li>Staplerfahrer</li>
-            <li>Fachlageristen</li>
-            <li>Kommissionierer</li>
-            <li>Versandmitarbeiter</li>
-            <li>Produktionshelfer &amp; Saisonkräfte</li>
-          </ul>
-        </div>
+<!-- Benefits -->
+<section id="benefits">
+  <div class="inner">
+    <h2>Warum Unternehmen mit uns arbeiten</h2>
+    <div class="grid benefits">
+      <div class="card benefit-card">
+        <h3>🎯 Passgenaue Kandidaten</h3>
+        <p>Wir prüfen fachliche Qualifikation und Soft-Fit – Sie erhalten nur geprüfte Profile.</p>
+      </div>
+      <div class="card benefit-card">
+        <h3>⚡ Schnelle Besetzung</h3>
+        <p>Dringende Vakanzen besetzen wir oft innerhalb weniger Tage, statt Wochen.</p>
+      </div>
+      <div class="card benefit-card">
+        <h3>💬 Ein Ansprechpartner</h3>
+        <p>Transparente Abläufe, klare Konditionen – kein Verwaltungsaufwand für Sie.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Benefits -->
-  <section id="benefits">
-    <div class="inner">
-      <h2>Warum Unternehmen mit uns arbeiten</h2>
-      <div class="grid benefits">
-        <div class="card benefit-card">
-          <h3>🎯 Passgenaue Kandidaten</h3>
-          <p>Wir sprechen Kandidaten aktiv an, prüfen fachliche Voraussetzungen und Soft-Fit – Sie erhalten nur geprüfte Profile.</p>
-        </div>
-        <div class="card benefit-card">
-          <h3>⚡ Schnelle Besetzung</h3>
-          <p>Für dringende Vakanzen liefern wir oft innerhalb von Tagen statt Wochen passende Vorschläge.</p>
-        </div>
-        <div class="card benefit-card">
-          <h3>💬 Ein Ansprechpartner</h3>
-          <p>Direkte Kommunikation, transparente Abläufe und klare Konditionen – kein Verwaltungsaufwand auf Ihrer Seite.</p>
-        </div>
+<!-- Process -->
+<section id="prozess">
+  <div class="inner">
+    <h2>Unser Ablauf – klar & unkompliziert</h2>
+    <div class="grid process-steps">
+      <div class="card process-card">
+        <h3>1. Bedarfsgespräch</h3>
+        <p>Wir klären Anforderungen, Schichtmodell, Gehalt und Starttermin – präzise & zielorientiert.</p>
+      </div>
+      <div class="card process-card">
+        <h3>2. Active Sourcing</h3>
+        <p>Gezieltes Ansprechen von Kandidaten über Jobportale, soziale Netzwerke und direkte Kontakte.</p>
+      </div>
+      <div class="card process-card">
+        <h3>3. Vorstellung</h3>
+        <p>Sie erhalten 2–4 vorqualifizierte Profile mit kurzem Screening-Protokoll.</p>
+      </div>
+      <div class="card process-card">
+        <h3>4. Einstellung</h3>
+        <p>Wir begleiten den finalen Schritt bis zur Besetzung und kümmern uns um alle Abstimmungen.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Process -->
-  <section id="prozess">
-    <div class="inner">
-      <h2>Unser Ablauf – klar & unkompliziert</h2>
-      <div class="grid process-steps">
-        <div class="card process-card">
-          <h3>1. Bedarfsgespräch</h3>
-          <p>Wir klären Anforderungen, Schichtmodell, Gehalt und Starttermin – kurz, präzise und zielorientiert.</p>
-        </div>
-        <div class="card process-card">
-          <h3>2. Active Sourcing</h3>
-          <p>Gezieltes Ansprechen von Kandidaten über Jobportale, soziale Gruppen und direkte Kontakte.</p>
-        </div>
-        <div class="card process-card">
-          <h3>3. Vorstellung</h3>
-          <p>Sie erhalten nur 2–4 vorqualifizierte Profile mit kurzem Screening-Protokoll.</p>
-        </div>
-        <div class="card process-card">
-          <h3>4. Einstellung</h3>
-          <p>Wir begleiten den finalen Schritt bis zur Besetzung und kümmern uns um die Abstimmungen.</p>
-        </div>
+<!-- About -->
+<section id="about">
+  <div class="inner">
+    <h2>Über effectrecruiting</h2>
+    <div class="card about">
+      <p>Wir sind spezialisiert auf Fachkräfte für Metallverarbeitung und CNC-Bearbeitung. Mit aktivem Sourcing und schnellem Screening reduzieren wir Ihre Zeit bis zur Einstellung deutlich.</p>
+      <p class="note">Ob kurzfristige Vakanzen oder langfristige Personalplanung – wir liefern passende Mitarbeiter, die in Ihrer Produktion sofort funktionieren.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="kontakt">
+  <div class="inner">
+    <h2>Kontaktieren Sie uns</h2>
+    <div class="contact-wrap">
+      <div class="contact-card">
+        <h3>Beder Amer</h3>
+        <p>📞 0157 39283779</p>
+        <p class="note">Erreichbarkeit: Mo – Fr 08:00–20:00 Uhr, Sa - So 10:00–20:00 Uhr</p>
+      </div>
+      <div class="contact-card" aria-labelledby="contactForm">
+        <div class="form-success" id="form-success">Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.</div>
+        <form id="contactForm" action="https://formspree.io/f/xldykngv" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="_replyto" required>
+          <label for="firma">Firma</label>
+          <input type="text" id="firma" name="firma">
+          <label for="message">Nachricht</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button type="submit" class="submit-btn">Nachricht senden</button>
+        </form>
+        <p class="note" style="margin-top:12px">Alternativ erreichen Sie uns telefonisch: <a href="tel:+4915739283779" style="color:var(--brand); text-decoration:none;">0157 39283779</a></p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- About -->
-  <section id="about">
-    <div class="inner">
-      <h2>Über effectrecruiting</h2>
-      <div class="card about">
-        <p>Effect Recruiting ist spezialisiert auf operative Fach- und Arbeitskräfte für Industrie, Produktion und Logistik. Wir kombinieren praxisnahe Ansprache mit schnellem Screening – so reduzieren wir Ihre Zeit bis zur Einstellung deutlich.</p>
-        <p class="note">Startklar für kurzfristige Vakanzen oder längerfristige Personalplanung – wir finden die Mitarbeiter, die in Ihrer Produktion oder Ihrem Lager wirklich funktionieren.</p>
-      </div>
+<!-- Footer -->
+<footer>
+  <div style="max-width:var(--container); margin:0 auto; text-align:left;">
+    <button class="accordion">Impressum</button>
+    <div class="panel">
+      <p style="margin:0; line-height:1.4;">effectrecruiting Inhaber: Beder Amer, Einzelunternehmen<br>
+      Saatwinkler Damm 123, 13629 Berlin<br>
+      Keine USt-ID<br>
+      Vertreten durch: Beder Amer<br>
+      E-Mail: info@effectrecruiting.com</p>
     </div>
-  </section>
-
-  <!-- Contact area -->
-  <section id="kontakt">
-    <div class="inner">
-      <h2>Kontaktieren Sie uns</h2>
-
-      <div class="contact-wrap">
-        <!-- Kontakt Info -->
-        <div class="contact-card">
-          <h3>Beder Amer</h3>
-          <p>📞 0157 39283779</p>
-          <p class="note">Erreichbarkeit: Mo – Fr 08:00–20:00 Uhr, Sa - So 10:00–20:00 Uhr</p>
-        </div>
-
-        <!-- FORM (Formspree) -->
-        <div class="contact-card" aria-labelledby="contactForm">
-          <div class="form-success" id="form-success">Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.</div>
-
-          <form id="contactForm" action="https://formspree.io/f/xldykngv" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="_replyto" required>
-
-            <label for="firma">Firma</label>
-            <input type="text" id="firma" name="firma">
-
-            <label for="message">Nachricht</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit" class="submit-btn">Nachricht senden</button>
-          </form>
-
-          <p class="note" style="margin-top:12px">Alternativ erreichen Sie uns telefonisch: <a href="tel:+4915739283779" style="color:var(--brand); text-decoration:none;">0157 39283779</a></p>
-        </div>
-      </div>
+    <button class="accordion">Datenschutz</button>
+    <div class="panel">
+      <p style="margin:0; line-height:1.4;">Wir respektieren Ihre Privatsphäre und verarbeiten personenbezogene Daten nur im Rahmen der gesetzlichen Vorschriften. Ihre Daten werden nicht an Dritte weitergegeben und nur zur Bearbeitung Ihrer Anfragen genutzt.</p>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div style="max-width:var(--container); margin:0 auto; text-align:left;">
-      <button class="accordion">Impressum</button>
-      <div class="panel">
-        <p style="margin:0; line-height:1.4;">effectrecruiting Inhaber: Beder Amer, Einzelunternehmen<br>
-        Saatwinkler Damm 123, 13629 Berlin<br>
-        Keine USt-ID<br>
-        Vertreten durch: Beder Amer<br>
-        E-Mail: info@effectrecruiting.com</p>
-      </div>
-
-      <button class="accordion">Datenschutz</button>
-      <div class="panel">
-        <p style="margin:0; line-height:1.4;">Wir respektieren Ihre Privatsphäre und verarbeiten personenbezogene Daten nur im Rahmen der gesetzlichen Vorschriften. Ihre Daten werden nicht an Dritte weitergegeben und nur zur Bearbeitung Ihrer Anfragen genutzt.</p>
-      </div>
-
-      <p style="color:#fff; margin-top:16px; text-align:right;">&copy; 2025 effectrecruiting</p>
-    </div>
-  </footer>
+    <p style="color:#fff; margin-top:16px; text-align:right;">&copy; 2025 effectrecruiting</p>
+  </div>
+</footer>
 
 <script>
   // Accordion
@@ -399,10 +362,9 @@
     });
   }
 
-  // Formspree handling
+  // Formspree
   const form = document.getElementById('contactForm');
   const successDiv = document.getElementById('form-success');
-
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     const data = new FormData(form);
