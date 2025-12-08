@@ -3,530 +3,265 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>effectrecruiting – Azubi-Vermittlung für Handwerk & Industrie</title>
+<title>effectrecruiting – Fachkräfte & Azubi-Vermittlung für Handwerk & Industrie</title>
 
 <style>
-  :root{
-    --brand:#1a2b5b;
-    --brand-dark:#0b1533;
-    --accent:#f1c40f;
-    --accent-soft:#fff7d6;
-    --card:#f9f9f9;
-    --muted:#555;
-    --radius:14px;
-    --container:1200px;
-  }
+/* ---------------------- DESIGN VARIABLEN ---------------------- */
+:root{
+  --brand:#1a2b5b;
+  --brand-dark:#0b1533;
+  --accent:#f1c40f;
+  --bg:#f7f8fa;
+  --text:#1f1f1f;
+  --muted:#6b7280;
+  --radius:14px;
+  --container:1100px;
+}
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin:0; padding:0;
-    background:#f4f5f8;
-    color:#222;
-    -webkit-font-smoothing:antialiased;
-  }
+/* ---------------------- GLOBAL ---------------------- */
+*{ box-sizing:border-box; margin:0; padding:0; }
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.55;
+}
+a{text-decoration:none; color:inherit;}
 
-  a{text-decoration:none;}
+/* ---------------------- HEADER ---------------------- */
+header{
+  background:#0f172a;
+  color:white;
+  padding:14px 0;
+  position:sticky; top:0; z-index:1000;
+}
+nav{
+  max-width:var(--container);
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 20px;
+}
+.logo{
+  font-size:1.4rem;
+  font-weight:800;
+  letter-spacing:0.3px;
+}
+.nav-links a{
+  margin-left:22px;
+  opacity:.85;
+  font-weight:600;
+}
+.nav-links a:hover{opacity:1; color:var(--accent);}
 
-  /* ---------- HEADER ---------- */
-  header{
-    background:rgba(10,18,50,0.98);
-    color:#fff;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,0.16);
-    backdrop-filter:blur(10px);
-  }
-  nav{
-    max-width:var(--container);
-    margin:0 auto;
-    padding:14px 18px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-  }
-  .logo{
-    font-weight:900;
-    font-size:1.5rem;
-    letter-spacing:.4px;
-    color:#fff;
-  }
-  .logo span{
-    font-weight:400;
-    font-size:0.8rem;
-    opacity:.8;
-    margin-left:6px;
-  }
-  .nav-links a{
-    color:#f9fafb;
-    text-decoration:none;
-    margin-left:24px;
-    font-weight:700;
-    font-size:0.95rem;
-    transition:color .15s, opacity .15s;
-    opacity:.9;
-  }
-  .nav-links a:hover{color:var(--accent); opacity:1;}
+/* ---------------------- HERO ---------------------- */
+.hero{
+  padding:100px 20px;
+  background:linear-gradient(120deg,#111827,#1f2937);
+  color:white;
+  text-align:center;
+}
+.hero h1{
+  font-size:3rem;
+  font-weight:900;
+  line-height:1.15;
+  max-width:760px;
+  margin:auto;
+}
+.hero h1 span{ color:var(--accent); }
+.hero-sub{
+  margin:20px auto 30px;
+  max-width:600px;
+  opacity:.9;
+  font-size:1.1rem;
+}
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#111;
+  padding:14px 26px;
+  font-weight:800;
+  border-radius:12px;
+  margin:6px 10px;
+}
+.btn:hover{ background:#ffd84b; }
 
-  /* ---------- HERO ---------- */
-  .hero{
-    padding:90px 20px 70px;
-    background:radial-gradient(circle at top left,#243463 0,#0b1430 35%,#050814 100%);
-    color:#fff;
-  }
-  .hero .container{
-    max-width:var(--container);
-    margin:0 auto;
-    display:grid;
-    gap:40px;
-  }
-  @media(min-width:900px){
-    .hero .container{
-      grid-template-columns: minmax(0,1.3fr) minmax(0,1fr);
-      align-items:center;
-    }
-  }
-  .hero-tag{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:6px 12px;
-    border-radius:999px;
-    border:1px solid rgba(241,196,15,0.5);
-    background:rgba(10,18,50,0.7);
-    font-size:0.8rem;
-    margin-bottom:16px;
-  }
-  .hero-tag span.badge{
-    background:var(--accent);
-    color:#111827;
-    padding:4px 8px;
-    border-radius:999px;
-    font-weight:800;
-    font-size:0.7rem;
-    text-transform:uppercase;
-    letter-spacing:.04em;
-  }
-  .hero h1{
-    font-size:2.7rem;
-    margin:0 0 12px;
-    font-weight:900;
-    line-height:1.15;
-  }
-  .hero h1 span{
-    color:var(--accent);
-  }
-  .hero-sub{
-    font-size:1.05rem;
-    color:#e5e7eb;
-    max-width:620px;
-    line-height:1.7;
-    margin-bottom:18px;
-  }
-  .hero-bullets{
-    list-style:none;
-    padding:0;
-    margin:0 0 22px;
-    font-size:0.97rem;
-    color:#e5e7eb;
-  }
-  .hero-bullets li{
-    margin-bottom:6px;
-    display:flex;
-    align-items:flex-start;
-    gap:8px;
-  }
-  .hero-bullets li::before{
-    content:"•";
-    color:var(--accent);
-    margin-top:2px;
-  }
-  .actions{margin-top:10px;}
-  .btn{
-    background:var(--accent);
-    color:#111827;
-    padding:14px 26px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:800;
-    display:inline-block;
-    margin:6px;
-    transition:all .18s;
-    font-size:0.95rem;
-  }
-  .btn:hover{
-    background:#ffd74a;
-    transform:translateY(-2px);
-    box-shadow:0 10px 24px rgba(0,0,0,.25);
-  }
-  .btn-dark{
-    background:transparent;
-    color:#e5e7eb;
-    border:1px solid rgba(229,231,235,0.4);
-  }
-  .btn-dark:hover{
-    background:#111827;
-    border-color:#111827;
-    color:#fff;
-  }
-  .hero-note{
-    margin-top:8px;
-    font-size:0.8rem;
-    color:#9ca3af;
-  }
-  .hero-panel{
-    background:linear-gradient(145deg,rgba(15,23,42,0.95),rgba(15,23,42,0.4));
-    border-radius:18px;
-    padding:22px 20px;
-    border:1px solid rgba(148,163,184,0.25);
-    box-shadow:0 18px 40px rgba(15,23,42,0.6);
-  }
-  .hero-panel h3{
-    margin:0 0 10px;
-    font-size:1rem;
-  }
-  .hero-panel p{
-    margin:0 0 10px;
-    font-size:0.9rem;
-    color:#e5e7eb;
-  }
-  .hero-pill-list{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-top:12px;
-  }
-  .hero-pill{
-    padding:6px 10px;
-    border-radius:999px;
-    background:rgba(148,163,184,0.14);
-    font-size:0.78rem;
-    color:#e5e7eb;
-    border:1px solid rgba(148,163,184,0.4);
-  }
+/* ---------------------- SECTION ---------------------- */
+section{
+  padding:80px 20px;
+}
+.inner{
+  max-width:var(--container);
+  margin:auto;
+}
+h2{
+  text-align:center;
+  font-size:2.2rem;
+  font-weight:900;
+  margin-bottom:10px;
+  color:var(--brand);
+}
+.section-sub{
+  text-align:center;
+  max-width:620px;
+  margin:0 auto 40px;
+  color:var(--muted);
+}
 
-  /* ---------- SECTIONS ---------- */
-  section{
-    padding:70px 20px;
-  }
-  .inner{
-    max-width:var(--container);
-    margin:auto;
-  }
-  h2{
-    text-align:center;
-    color:var(--brand);
-    font-size:2rem;
-    margin-bottom:10px;
-    font-weight:900;
-  }
-  .section-sub{
-    text-align:center;
-    color:var(--muted);
-    font-size:0.95rem;
-    max-width:620px;
-    margin:0 auto 38px;
-  }
+/* ---------------------- GRID / CARDS ---------------------- */
+.grid{
+  display:grid;
+  gap:24px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+.card{
+  background:white;
+  padding:30px 24px;
+  border-radius:var(--radius);
+  border:1px solid #e5e7eb;
+  transition:.2s;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 40px rgba(0,0,0,0.07);
+}
+.card h3{
+  font-size:1.2rem;
+  margin-bottom:8px;
+  color:var(--brand);
+}
+.card p{
+  color:var(--muted);
+  margin-bottom:10px;
+}
+.pill-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:10px;
+}
+.pill{
+  font-size:0.78rem;
+  background:#eef0f4;
+  padding:5px 10px;
+  border-radius:999px;
+  color:#374151;
+}
 
-  /* ---------- GRID ---------- */
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:22px;
-  }
+/* ---------------------- LEISTUNGEN ---------------------- */
+.leistungen-copy{
+  margin-top:40px;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.leistungen-copy p{ color:var(--muted); margin-bottom:14px; }
 
-  /* ---------- CARDS ---------- */
-  .card{
-    background:#ffffff;
-    padding:26px 22px;
-    border-radius:var(--radius);
-    box-shadow:0 18px 40px rgba(10,15,40,0.06);
-    transition:all .18s;
-    border:1px solid rgba(15,23,42,0.04);
-  }
-  .card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 24px 50px rgba(10,15,40,0.12);
-    border-color:rgba(15,23,42,0.12);
-  }
-  .card h3{
-    margin:0 0 8px;
-    font-size:1.15rem;
-    font-weight:800;
-    color:var(--brand);
-  }
-  .card-tag{
-    display:inline-block;
-    font-size:0.75rem;
-    padding:4px 8px;
-    border-radius:999px;
-    background:var(--accent-soft);
-    color:#7a6220;
-    font-weight:700;
-    margin-bottom:10px;
-  }
-  .card p{
-    margin:6px 0 0;
-    color:var(--muted);
-    line-height:1.55;
-    font-size:0.95rem;
-  }
-  .card ul{
-    padding-left:18px;
-    margin:10px 0 0;
-    color:var(--muted);
-    line-height:1.55;
-    font-size:0.93rem;
-  }
-  .pill-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin-top:10px;
-  }
-  .pill{
-    font-size:0.78rem;
-    padding:4px 8px;
-    border-radius:999px;
-    background:#f3f4f6;
-    color:#4b5563;
-  }
+/* ---------------------- CTA STRIP ---------------------- */
+.cta-strip{
+  margin-top:26px;
+  background:#fefce8;
+  border:1px solid #facc15;
+  padding:18px 20px;
+  border-radius:14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.cta-strip a{
+  background:#facc15;
+  padding:10px 18px;
+  border-radius:999px;
+  font-weight:800;
+}
+.cta-strip a:hover{ background:#fde047; }
 
-  /* ---------- LEISTUNGEN-SPECIAL LAYOUT ---------- */
-  .leistungen-wrap{
-    display:grid;
-    gap:26px;
-  }
-  @media(min-width:960px){
-    .leistungen-wrap{
-      grid-template-columns:1.1fr 0.9fr;
-    }
-  }
-  .leistungen-copy{
-    align-self:center;
-  }
-  .leistungen-copy h3{
-    font-size:1.3rem;
-    margin:0 0 10px;
-    color:var(--brand);
-  }
-  .leistungen-copy p{
-    margin:0 0 12px;
-    color:var(--muted);
-    font-size:0.97rem;
-    line-height:1.7;
-  }
-  .checklist{
-    list-style:none;
-    padding:0;
-    margin:0 0 12px;
-    color:var(--muted);
-    font-size:0.93rem;
-  }
-  .checklist li{
-    margin-bottom:6px;
-    display:flex;
-    gap:8px;
-  }
-  .check-icon{
-    color:#16a34a;
-    font-weight:bold;
-  }
-  .cta-strip{
-    margin-top:22px;
-    padding:14px 16px;
-    border-radius:14px;
-    background:#fefce8;
-    border:1px solid #facc15;
-    font-size:0.9rem;
-    color:#713f12;
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    gap:10px;
-    justify-content:space-between;
-  }
-  .cta-strip strong{font-weight:800;}
-  .cta-strip a{
-    padding:8px 16px;
-    border-radius:999px;
-    background:#facc15;
-    color:#111827;
-    font-weight:800;
-    font-size:0.85rem;
-  }
-  .cta-strip a:hover{background:#fde047;}
+/* ---------------------- PROZESS ---------------------- */
+.step-number{
+  width:28px;
+  height:28px;
+  border-radius:999px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:var(--brand);
+  color:white;
+  font-size:0.8rem;
+  margin-bottom:10px;
+}
 
-  /* ---------- BENEFITS ---------- */
-  #benefits{
-    background:#ffffff;
-  }
-  .benefit-badge{
-    display:inline-block;
-    font-size:0.8rem;
-    padding:4px 10px;
-    border-radius:999px;
-    background:#eef2ff;
-    color:#312e81;
-    margin-bottom:14px;
-    font-weight:700;
-  }
-
-  /* ---------- PROZESS ---------- */
-  #prozess{
-    background:linear-gradient(180deg,#f4f5f8 0,#e5e7eb 100%);
-  }
-  .step-number{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:26px;
-    height:26px;
-    border-radius:999px;
-    background:var(--brand);
-    color:#fff;
-    font-size:0.8rem;
-    font-weight:800;
-    margin-bottom:8px;
-  }
-
-  /* ---------- MID CTA-BANNER ---------- */
-  .cta-banner{
-    margin-top:50px;
-    background:linear-gradient(90deg,#1f2937,#111827);
-    border-radius:18px;
-    padding:24px 22px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:16px;
-    align-items:center;
-    justify-content:space-between;
-    color:#e5e7eb;
-  }
-  .cta-banner h3{
-    margin:0 0 4px;
-    font-size:1.15rem;
-  }
-  .cta-banner p{
-    margin:0;
-    font-size:0.9rem;
-    color:#d1d5db;
-  }
-
-  /* ---------- ABOUT ---------- */
-  #about{
-    background:#ffffff;
-  }
-  .note{color:var(--muted); font-size:0.9rem;}
-
-  /* ---------- CONTACT ---------- */
-  #kontakt{
-    background:#f9fafb;
-  }
+/* ---------------------- KONTAKT ---------------------- */
+.contact-wrap{
+  display:grid;
+  gap:28px;
+}
+@media(min-width:900px){
   .contact-wrap{
-    display:grid;
-    gap:26px;
+    grid-template-columns:350px 1fr;
   }
-  @media(min-width:900px){
-    .contact-wrap{grid-template-columns:350px 1fr;}
-  }
-  .contact-card{
-    background:#ffffff;
-    padding:24px;
-    border-radius:14px;
-    box-shadow:0 10px 30px rgba(15,23,42,0.08);
-    border:1px solid rgba(15,23,42,0.06);
-  }
-  .contact-card h3{
-    margin-top:0;
-    font-size:1.15rem;
-    color:var(--brand);
-  }
-  .contact-highlight{
-    font-size:0.9rem;
-    color:#4b5563;
-    margin-bottom:10px;
-  }
-  label{
-    font-weight:800;
-    color:var(--brand);
-    margin-bottom:6px;
-    display:block;
-    font-size:0.9rem;
-  }
-  input,textarea{
-    width:100%;
-    padding:13px;
-    border:1px solid #d1d5db;
-    border-radius:10px;
-    margin-bottom:14px;
-    transition:border-color .15s, box-shadow .15s;
-    font-size:0.9rem;
-    font-family:inherit;
-  }
-  input:focus,textarea:focus{
-    border-color:var(--brand);
-    box-shadow:0 0 6px rgba(26,43,91,.25);
-    outline:none;
-  }
-  .submit-btn{
-    background:var(--brand);
-    color:#fff;
-    border:none;
-    padding:13px;
-    border-radius:10px;
-    font-weight:800;
-    cursor:pointer;
-    width:100%;
-    font-size:0.95rem;
-  }
-  .submit-btn:hover{background:var(--brand-dark);}
-  .form-success{
-    display:none;
-    padding:12px;
-    background:#dff3e8;
-    color:#0b713f;
-    border-radius:10px;
-    text-align:center;
-    font-weight:700;
-    margin-bottom:14px;
-    font-size:0.9rem;
-  }
+}
+.contact-card{
+  background:white;
+  padding:24px;
+  border-radius:14px;
+  border:1px solid #e5e7eb;
+}
+label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:700;
+}
+input,textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  margin-bottom:14px;
+  font-size:0.95rem;
+}
+.submit-btn{
+  background:var(--brand);
+  color:white;
+  padding:14px;
+  width:100%;
+  border-radius:12px;
+  font-weight:800;
+}
+.submit-btn:hover{ background:var(--brand-dark); }
 
-  /* ---------- FOOTER ---------- */
-  footer{
-    background:#020617;
-    color:#9ca3af;
-    padding:40px 20px;
-    margin-top:30px;
-  }
-  .accordion{
-    background:rgba(15,23,42,0.9);
-    border:1px solid rgba(148,163,184,0.4);
-    padding:12px;
-    color:#e5e7eb;
-    font-weight:800;
-    border-radius:10px;
-    width:100%;
-    text-align:left;
-    margin-top:12px;
-    cursor:pointer;
-    font-size:0.9rem;
-  }
-  .panel{
-    display:none;
-    background:rgba(15,23,42,0.8);
-    padding:14px;
-    margin-top:8px;
-    border-radius:10px;
-    color:#e5e7eb;
-    font-size:0.85rem;
-  }
-  footer p{
-    font-size:0.82rem;
-  }
+/* ---------------------- FOOTER ---------------------- */
+footer{
+  background:#020617;
+  padding:40px 20px;
+  color:#9ca3af;
+  margin-top:60px;
+}
+
+/* Accordion */
+.accordion{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  background:#111827;
+  border:1px solid #334155;
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:12px;
+}
+.panel{
+  display:none;
+  padding:16px;
+  background:#1e293b;
+  border-radius:10px;
+  margin-top:8px;
+  color:white;
+  font-size:0.88rem;
+}
 </style>
 </head>
 
@@ -535,7 +270,7 @@
 <!-- HEADER -->
 <header>
   <nav>
-    <div class="logo">effectrecruiting <span>Azubi-Vermittlung Handwerk & Industrie</span></div>
+    <div class="logo">effectrecruiting</div>
     <div class="nav-links">
       <a href="#home">Home</a>
       <a href="#leistungen">Leistungen</a>
@@ -547,194 +282,61 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="container">
-    <div>
-      <div class="hero-tag">
-        <span class="badge">Azubi-Spezialisierung</span>
-        Handwerk & Industrie – Anlagenmechanik, Elektro, Metall
-      </div>
-      <h1>Wir besetzen Ihre <span>Azubi-Stellen</span>, bevor Sie Aufträge ablehnen müssen.</h1>
-      <p class="hero-sub">
-        effectrecruiting vermittelt vorqualifizierte Auszubildende für Anlagenmechanik SHK, Elektronik, Industrie- und Zerspanungsmechanik.
-        Damit Sie nicht noch ein Ausbildungsjahr mit offenen Stellen und überlasteten Monteuren verlieren.
-      </p>
-      <ul class="hero-bullets">
-        <li>Geprüfte Kandidaten, die den Beruf wirklich wollen – kein „Ich probier mal irgendwas“.</li>
-        <li>Wir übernehmen Suche, Vorqualifizierung und Terminierung – Sie konzentrieren sich auf Ihr Tagesgeschäft.</li>
-        <li>Transparente Konditionen, klare Kommunikation, Besetzung mit Plan statt Zufall.</li>
-      </ul>
-
-      <div class="actions">
-        <a class="btn" href="#kontakt">Kostenloses Erstgespräch sichern</a>
-        <a class="btn btn-dark" href="#leistungen">Leistungsspektrum ansehen</a>
-      </div>
-      <div class="hero-note">
-        Typische Kunden: SHK- und Elektro-Fachbetriebe, Metallverarbeitung, Industrieunternehmen mit dauerhaften Azubi-Vakanzen.
-      </div>
-    </div>
-
-    <div class="hero-panel">
-      <h3>Akute Azubi-Lücke in Ihrem Betrieb?</h3>
-      <p>
-        Wenn Sie seit Monaten keine passenden Bewerbungen erhalten, ständig Termine verschieben und Aufträge strecken:
-        genau dort setzen wir an.
-      </p>
-      <div class="hero-pill-list">
-        <div class="hero-pill">Azubi-Anlagenmechaniker (SHK)</div>
-        <div class="hero-pill">Azubi-Elektroniker Energie & Gebäudetechnik</div>
-        <div class="hero-pill">Azubi-Industriemechaniker</div>
-        <div class="hero-pill">Azubi-Zerspanungsmechaniker</div>
-      </div>
-      <p style="margin-top:14px; font-size:0.85rem; color:#9ca3af;">
-        In einem 15-minütigen Gespräch klären wir, ob und wie wir Ihre Ausbildungsplätze realistisch besetzen können.
-      </p>
-      <a href="#kontakt" class="btn" style="width:100%; text-align:center; margin-top:4px;">Jetzt Rückruf anfordern</a>
-    </div>
-  </div>
+  <h1>Wir vermitteln <span>Fachkräfte & Auszubildende</span> für Handwerk & Industrie.</h1>
+  <p class="hero-sub">
+    Anlagenmechaniker · Elektriker · Industriemechaniker · Zerspanungsmechaniker –  
+    praxisgeprüft, zuverlässig und vorqualifiziert.
+  </p>
+  <a href="#kontakt" class="btn">Erstgespräch sichern</a>
+  <a href="#leistungen" class="btn" style="background:#fff; color:#111;">Leistungen ansehen</a>
 </section>
 
 <!-- LEISTUNGEN -->
 <section id="leistungen">
   <div class="inner">
-    <h2>Unser Leistungsspektrum für Azubi-Besetzungen</h2>
-    <p class="section-sub">
-      Wir fokussieren uns konsequent auf vier Ausbildungsberufe, bei denen der Mangel besonders spürbar ist – und in denen jeder unbesetzte Platz
-      direkt auf Ihre Produktivität durchschlägt.
-    </p>
-
-    <div class="leistungen-wrap">
-      <div class="grid">
-        <div class="card">
-          <div class="card-tag">Azubi-Anlagenmechaniker (SHK)</div>
-          <h3>Anlagenmechaniker für Sanitär-, Heizungs- und Klimatechnik</h3>
-          <p>Für SHK-Betriebe, die Wartungen, Montagen und Neubau kaum noch abgearbeitet bekommen.</p>
-          <ul>
-            <li>Auszubildende mit echtem Praxisinteresse statt reiner Schulflucht.</li>
-            <li>Fokus auf Zuverlässigkeit, Auftreten beim Kunden und Belastbarkeit.</li>
-            <li>Ideal für Betriebe, die langfristig eigene Fachkräfte aufbauen wollen.</li>
-          </ul>
-          <div class="pill-row">
-            <span class="pill">Kundendienst</span>
-            <span class="pill">Montage</span>
-            <span class="pill">Serviceeinsätze</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-tag">Azubi-Elektroniker</div>
-          <h3>Elektroniker für Energie- & Gebäudetechnik</h3>
-          <p>Für Elektrofirmen, bei denen Projekte aufgrund fehlender Nachwuchskräfte liegen bleiben.</p>
-          <ul>
-            <li>Auszubildende mit Interesse an Elektrotechnik statt „irgendwas mit Technik“.</li>
-            <li>Matching auf Basis von Schulniveau, räumlicher Flexibilität und Motivation.</li>
-            <li>Gezielte Ansprache technikaffiner Jugendlicher über Social Media & Netzwerke.</li>
-          </ul>
-          <div class="pill-row">
-            <span class="pill">Neubau & Sanierung</span>
-            <span class="pill">Gebäudetechnik</span>
-            <span class="pill">Serviceeinsätze</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-tag">Azubi-Industriemechaniker</div>
-          <h3>Industriemechaniker</h3>
-          <p>Für Industrieunternehmen, die ohne Nachwuchs schrittweise Kapazität verlieren.</p>
-          <ul>
-            <li>Bewerber mit technischem Verständnis und Interesse an Maschinen & Anlagen.</li>
-            <li>Ausgerichtet auf produzierende Unternehmen mit Schicht- und Serienfertigung.</li>
-            <li>Vorqualifizierung nach Belastbarkeit, Schichtbereitschaft und Lernmotivation.</li>
-          </ul>
-          <div class="pill-row">
-            <span class="pill">Produktion</span>
-            <span class="pill">Instandhaltung</span>
-            <span class="pill">Montage</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-tag">Azubi-Zerspanungsmechaniker</div>
-          <h3>Zerspanungsmechaniker (CNC)</h3>
-          <p>Für metallverarbeitende Betriebe, die CNC-Maschinen nicht voll auslasten können.</p>
-          <ul>
-            <li>Azubis mit Interesse an CNC, Zeichnungen und Präzisionsarbeit.</li>
-            <li>Screening nach räumlicher Nähe, technischer Auffassungsgabe und Durchhaltevermögen.</li>
-            <li>Besonders geeignet für Dreh-, Fräs- und kombinierten Metallbetrieb.</li>
-          </ul>
-          <div class="pill-row">
-            <span class="pill">CNC-Drehen</span>
-            <span class="pill">CNC-Fräsen</span>
-            <span class="pill">Präzisionsteile</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="leistungen-copy">
-        <h3>Ihr Problem ist nicht „keine Bewerber“, sondern „keine passenden Bewerber“.</h3>
-        <p>
-          Viele Betriebe erhalten entweder gar keine Bewerbungen – oder nur Profile, die im Alltag nicht tragfähig sind.
-          Unpünktlichkeit, falsche Vorstellungen vom Beruf, fehlende Basis-Motivation: genau das filtern wir vor.
-        </p>
-        <p>
-          Wir sprechen Jugendliche dort an, wo sie tatsächlich aktiv sind, prüfen Motivation und Rahmenbedingungen
-          und stellen Ihnen nur diejenigen vor, bei denen die Chance auf eine erfolgreiche Ausbildung realistisch ist.
-        </p>
-        <ul class="checklist">
-          <li><span class="check-icon">✓</span> Sie sparen Zeit im Auswahlprozess, weil wir vorfiltern.</li>
-          <li><span class="check-icon">✓</span> Sie reduzieren Fehlbesetzungen und Abbrüche im 1. Lehrjahr.</li>
-          <li><span class="check-icon">✓</span> Sie bauen planbar eigenen Nachwuchs auf, statt nur zu reagieren.</li>
-        </ul>
-        <div class="cta-strip">
-          <span><strong>Haben Sie aktuell mindestens eine unbesetzte Azubi-Stelle?</strong><br/>Dann sollten wir sprechen.</span>
-          <a href="#kontakt">Jetzt Rückruf anfragen</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BENEFITS -->
-<section id="benefits">
-  <div class="inner">
-    <h2>Warum Unternehmen mit uns arbeiten</h2>
-    <p class="section-sub">
-      Wir sind keine anonyme Jobbörse, sondern ein spezialisierter Partner, der genau versteht,
-      was es bedeutet, wenn Azubi-Stellen im Handwerk und in der Industrie unbesetzt bleiben.
-    </p>
+    <h2>Unser Leistungsspektrum</h2>
+    <p class="section-sub">Wir besetzen Fachkräfte und Auszubildende in den wichtigsten technischen Berufen.</p>
 
     <div class="grid">
       <div class="card">
-        <span class="benefit-badge">Schmerzpunkt: offene Stellen</span>
-        <h3>Wir besetzen, bevor Sie Aufträge ablehnen müssen.</h3>
-        <p>
-          Offene Ausbildungsplätze bedeuten: Fachkräftefehler in 2–3 Jahren, überlastete Teams heute.
-          Wir liefern vorqualifizierte Azubi-Kandidaten, bevor Ihre Leistung am Markt sichtbar leidet.
-        </p>
+        <h3>Anlagenmechaniker SHK</h3>
+        <p>Fachkräfte für Installation, Wartung und Modernisierung.</p>
+        <div class="pill-row">
+          <span class="pill">Montage</span><span class="pill">Service</span><span class="pill">Sanitär & Heizung</span>
+        </div>
       </div>
+
       <div class="card">
-        <span class="benefit-badge">Schmerzpunkt: Zeitfresser Recruiting</span>
-        <h3>Wir übernehmen die Suche – Sie bleiben im Tagesgeschäft.</h3>
-        <p>
-          Bewerbungen prüfen, Gespräche koordinieren, abspringende Kandidaten nachtelefonieren:
-          all das kostet Sie Zeit, die Sie nicht haben. Wir strukturieren den Prozess und liefern Ihnen nur passende Vorschläge.
-        </p>
+        <h3>Elektroniker Energie & Gebäudetechnik</h3>
+        <p>Elektro-Fachkräfte für Neubau, Sanierung und Industrie.</p>
+        <div class="pill-row">
+          <span class="pill">Installation</span><span class="pill">Gebäudetechnik</span><span class="pill">Service</span>
+        </div>
       </div>
+
       <div class="card">
-        <span class="benefit-badge">Schmerzpunkt: Fehlbesetzungen</span>
-        <h3>Wir filtern „nur mal ausprobieren“ konsequent aus.</h3>
-        <p>
-          Ein Ausbildungsabbruch nach ein paar Monaten kostet Nerven, Geld und Zeit.
-          Unsere Vorqualifizierung fokussiert auf Motivation, Belastbarkeit und echtes Interesse am Beruf.
-        </p>
+        <h3>Industriemechaniker</h3>
+        <p>Fachkräfte für Produktion, Instandhaltung und Anlagenbetrieb.</p>
+        <div class="pill-row">
+          <span class="pill">Produktion</span><span class="pill">Wartung</span><span class="pill">Montage</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Zerspanungsmechaniker (CNC)</h3>
+        <p>CNC-Fachkräfte für Dreh-, Fräs- und Präzisionsbearbeitung.</p>
+        <div class="pill-row">
+          <span class="pill">CNC-Drehen</span><span class="pill">CNC-Fräsen</span><span class="pill">Präzision</span>
+        </div>
       </div>
     </div>
 
-    <div class="cta-banner">
-      <div>
-        <h3>Haben Sie in den letzten 12 Monaten mindestens eine Azubi-Stelle nicht besetzen können?</h3>
-        <p>Dann haben Sie bereits Geld auf der Straße liegen lassen. Lassen Sie uns prüfen, wie viele Plätze wir in der nächsten Runde gemeinsam füllen können.</p>
+    <div class="leistungen-copy">
+      <p>Wir qualifizieren vor, prüfen Motivation, Berufseignung und Rahmenbedingungen – und stellen nur passende Profile vor.</p>
+      <div class="cta-strip">
+        <span><strong>Offene Stellen?</strong> Wir finden passende Fachkräfte.</span>
+        <a href="#kontakt">Rückruf anfragen</a>
       </div>
-      <a href="#kontakt" class="btn">Kurzberatung anfragen</a>
     </div>
   </div>
 </section>
@@ -742,72 +344,37 @@
 <!-- PROZESS -->
 <section id="prozess">
   <div class="inner">
-    <h2>So laufen Azubi-Vermittlungen mit uns ab</h2>
-    <p class="section-sub">
-      Klarer Prozess statt Bauchgefühl: Wir halten Ihnen den Rücken frei und sorgen dafür,
-      dass nur Kandidaten bei Ihnen im Gespräch landen, die wirklich zu Betrieb, Beruf und Rahmenbedingungen passen.
-    </p>
+    <h2>So arbeiten wir</h2>
+    <p class="section-sub">Ein klarer, schneller Recruiting-Prozess – ohne Zeitverlust für Sie.</p>
 
     <div class="grid">
       <div class="card">
         <div class="step-number">1</div>
-        <h3>Bedarfsgespräch & Profil</h3>
-        <p>
-          Wir klären Ihre Anforderungen: Beruf, Starttermin, Arbeitszeiten, Schulvoraussetzung, Soft Skills.
-          Ziel: ein Azubi-Profil, das zur Realität in Ihrem Betrieb passt.
-        </p>
+        <h3>Anforderungsprofil</h3>
+        <p>Wir klären Ihren Bedarf, Standort, Qualifikation und Rahmenbedingungen.</p>
       </div>
+
       <div class="card">
         <div class="step-number">2</div>
-        <h3>Active Sourcing & Vorqualifizierung</h3>
-        <p>
-          Wir rekrutieren aktiv über Social Media, Netzwerke und Kontakte,
-          führen Erstgespräche und prüfen Motivation, Zuverlässigkeit und Rahmenbedingungen.
-        </p>
+        <h3>Active Sourcing</h3>
+        <p>Gezielte Ansprache & Vorqualifizierung aller relevanten Kandidaten.</p>
       </div>
+
       <div class="card">
         <div class="step-number">3</div>
-        <h3>Kandidatenvorstellung</h3>
-        <p>
-          Sie erhalten eine kleine, gezielte Auswahl von 2–4 passenden Profilen inklusive Kurzbewertung –
-          keine endlosen Listen, sondern klare Empfehlungen.
-        </p>
+        <h3>Kandidatenvorschläge</h3>
+        <p>Sie erhalten wenige, aber passende Profile – keine Bewerbungsflut.</p>
       </div>
+
       <div class="card">
         <div class="step-number">4</div>
-        <h3>Vorstellungsgespräch & Einstellung</h3>
-        <p>
-          Wir unterstützen bei Terminfindung und Vorbereitung.
-          Nach erfolgreicher Besetzung begleiten wir die ersten Schritte im Betrieb auf Wunsch mit.
-        </p>
+        <h3>Einstellung</h3>
+        <p>Wir begleiten den Prozess bis zur verbindlichen Zusage.</p>
       </div>
     </div>
 
-    <div style="text-align:center; margin-top:34px;">
-      <a class="btn" href="#kontakt">Jetzt unverbindliches Erstgespräch anfragen</a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="inner">
-    <h2>Über effectrecruiting</h2>
-
-    <div class="card">
-      <p>
-        effectrecruiting ist eine spezialisierte Personalvermittlung für Azubis in Handwerk und Industrie.
-        Statt „alles für alle“ fokussieren wir uns auf vier Berufe, die für die Zukunft Ihres Betriebs entscheidend sind:
-        Anlagenmechaniker SHK, Elektroniker für Energie- und Gebäudetechnik, Industriemechaniker und Zerspanungsmechaniker.
-      </p>
-      <p>
-        Unser Ansatz: aktive Ansprache, ehrliche Kommunikation mit Bewerbern und ein klarer Blick auf die Realität im Betrieb.
-        Wir vermitteln keine Hochglanz-Versprechen, sondern Menschen, die in Ihrem Alltag funktionieren.
-      </p>
-      <p class="note">
-        Wenn Sie Ihre Azubi-Stellen bisher über klassische Anzeigen und Zufall besetzen:
-        Es geht deutlich strukturierter, planbarer und mit weniger Frust – genau dort setzen wir an.
-      </p>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="#kontakt" class="btn">Unverbindliches Gespräch</a>
     </div>
   </div>
 </section>
@@ -816,48 +383,33 @@
 <section id="kontakt">
   <div class="inner">
     <h2>Kontakt</h2>
-    <p class="section-sub">
-      Schreiben Sie mir kurz, welche Azubi-Stellen aktuell oder im nächsten Ausbildungsjahr unbesetzt sind.
-      Wir melden uns zeitnah mit einem Vorschlag für das weitere Vorgehen.
-    </p>
+    <p class="section-sub">Lassen Sie uns kurz sprechen – wir geben eine realistische Einschätzung zu Ihren Besetzungsmöglichkeiten.</p>
 
     <div class="contact-wrap">
-
       <div class="contact-card">
         <h3>Beder Amer</h3>
-        <p class="contact-highlight">
-          Persönlicher Ansprechpartner für Azubi-Vermittlungen in Handwerk & Industrie.
-        </p>
-        <p>📞 <a href="tel:+4915739283779" style="color:var(--brand); text-decoration:none; font-weight:700;">0157 39283779</a></p>
-        <p>✉️ <a href="mailto:info@effectrecruiting.com" style="color:var(--brand); text-decoration:none;">info@effectrecruiting.com</a></p>
-        <p class="note">Erreichbar: Mo – Fr 08:00–20:00, Sa–So 10:00–20:00</p>
-        <hr style="border:none; border-top:1px solid #e5e7eb; margin:18px 0;">
-        <p class="note">
-          Ideal: Nennen Sie in Ihrer Nachricht kurz Beruf, Standort und Anzahl der unbesetzten Azubi-Stellen.
-          So können wir im Erstgespräch direkt konkret werden.
-        </p>
+        <p>Ihr Ansprechpartner für Fachkräfte & Azubi-Recruiting.</p>
+        <p>📞 <a href="tel:+4915739283779">0157 39283779</a></p>
+        <p>✉️ <a href="mailto:info@effectrecruiting.com">info@effectrecruiting.com</a></p>
       </div>
 
       <div class="contact-card">
-        <div class="form-success" id="form-success">Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.</div>
+        <form action="https://formspree.io/f/xldykngv" method="POST">
+          <label>Name</label>
+          <input type="text" name="name" required />
 
-        <form id="contactForm" action="https://formspree.io/f/xldykngv" method="POST">
-          <label for="name">Name & Funktion im Unternehmen</label>
-          <input type="text" id="name" name="name" required>
+          <label>E-Mail</label>
+          <input type="email" name="_replyto" required />
 
-          <label for="email">E-Mail</label>
-          <input type="email" id="email" name="_replyto" required>
+          <label>Firma & Standort</label>
+          <input type="text" name="firma" />
 
-          <label for="firma">Firma & Standort</label>
-          <input type="text" id="firma" name="firma">
+          <label>Welche Stellen sind offen?</label>
+          <textarea name="message" rows="5" required></textarea>
 
-          <label for="message">Welche Azubi-Stellen sind bei Ihnen aktuell unbesetzt?</label>
-          <textarea id="message" name="message" rows="5" required placeholder="z. B. 1x Azubi Anlagenmechaniker SHK in Berlin, Start 08/2025, 2x Azubi Elektroniker in Vollzeit ..."></textarea>
-
-          <button type="submit" class="submit-btn">Rückruf / E-Mail anfordern</button>
+          <button class="submit-btn">Absenden</button>
         </form>
       </div>
-
     </div>
   </div>
 </section>
@@ -867,21 +419,13 @@
   <div style="max-width:var(--container); margin:auto;">
     <button class="accordion">Impressum</button>
     <div class="panel">
-      <p>
-        effectrecruiting – Inhaber: Beder Amer, Einzelunternehmen<br>
-        Saatwinkler Damm 123, 13629 Berlin<br>
-        Keine USt-ID<br>
-        Vertreten durch: Beder Amer<br>
-        E-Mail: info@effectrecruiting.com
-      </p>
+      effectrecruiting · Beder Amer · Berlin  
+      E-Mail: info@effectrecruiting.com
     </div>
 
     <button class="accordion">Datenschutz</button>
     <div class="panel">
-      <p>
-        Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.
-        Eine Weitergabe an Dritte erfolgt nur, sofern dies für die Anbahnung oder Durchführung eines Vermittlungsauftrags erforderlich ist.
-      </p>
+      Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage genutzt.
     </div>
 
     <p style="text-align:right; margin-top:20px;">© 2025 effectrecruiting</p>
@@ -889,37 +433,13 @@
 </footer>
 
 <script>
-  // Accordions
-  const acc = document.getElementsByClassName("accordion");
-  for (let i=0; i<acc.length; i++){
-    acc[i].addEventListener("click", function(){
-      this.classList.toggle("active");
-      const panel = this.nextElementSibling;
-      panel.style.display = panel.style.display === "block" ? "none" : "block";
-    });
-  }
-
-  // Formspree
-  const form = document.getElementById('contactForm');
-  const successDiv = document.getElementById('form-success');
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const data = new FormData(form);
-
-    fetch(form.action,{
-      method:form.method,
-      body:data,
-      headers:{ 'Accept':'application/json' }
-    })
-    .then(response=>{
-      if(response.ok){
-        successDiv.style.display='block';
-        form.reset();
-        setTimeout(()=>{successDiv.style.display='none';},4000);
-      }
-    });
-  });
+// Accordion
+document.querySelectorAll(".accordion").forEach(btn=>{
+  btn.onclick = () => {
+    const panel = btn.nextElementSibling;
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
+  };
+});
 </script>
 
 </body>
