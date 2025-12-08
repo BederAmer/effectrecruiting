@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>effectrecruiting – Fachkräfte & Azubi-Vermittlung für Handwerk & Industrie</title>
+<title>effectrecruiting – Fachkräfte für Metall & Industrie</title>
 
 <style>
-/* ---------------------- DESIGN VARIABLEN ---------------------- */
+/* ——— DESIGN VARIABLEN ——— */
 :root{
   --brand:#1a2b5b;
   --brand-dark:#0b1533;
@@ -18,7 +18,7 @@
   --container:1100px;
 }
 
-/* ---------------------- GLOBAL ---------------------- */
+/* ——— GLOBAL ——— */
 *{ box-sizing:border-box; margin:0; padding:0; }
 body{
   font-family:Arial, Helvetica, sans-serif;
@@ -28,7 +28,7 @@ body{
 }
 a{text-decoration:none; color:inherit;}
 
-/* ---------------------- HEADER ---------------------- */
+/* ——— HEADER ——— */
 header{
   background:#0f172a;
   color:white;
@@ -55,7 +55,7 @@ nav{
 }
 .nav-links a:hover{opacity:1; color:var(--accent);}
 
-/* ---------------------- HERO ---------------------- */
+/* ——— HERO ——— */
 .hero{
   padding:100px 20px;
   background:linear-gradient(120deg,#111827,#1f2937);
@@ -87,7 +87,7 @@ nav{
 }
 .btn:hover{ background:#ffd84b; }
 
-/* ---------------------- SECTION ---------------------- */
+/* ——— SECTION ——— */
 section{
   padding:80px 20px;
 }
@@ -109,7 +109,7 @@ h2{
   color:var(--muted);
 }
 
-/* ---------------------- GRID / CARDS ---------------------- */
+/* ——— GRID / CARDS ——— */
 .grid{
   display:grid;
   gap:24px;
@@ -149,7 +149,7 @@ h2{
   color:#374151;
 }
 
-/* ---------------------- LEISTUNGEN ---------------------- */
+/* ——— LEISTUNGEN ——— */
 .leistungen-copy{
   margin-top:40px;
   text-align:center;
@@ -159,7 +159,7 @@ h2{
 }
 .leistungen-copy p{ color:var(--muted); margin-bottom:14px; }
 
-/* ---------------------- CTA STRIP ---------------------- */
+/* ——— CTA STRIP ——— */
 .cta-strip{
   margin-top:26px;
   background:#fefce8;
@@ -180,7 +180,7 @@ h2{
 }
 .cta-strip a:hover{ background:#fde047; }
 
-/* ---------------------- PROZESS ---------------------- */
+/* ——— PROZESS ——— */
 .step-number{
   width:28px;
   height:28px;
@@ -194,7 +194,7 @@ h2{
   margin-bottom:10px;
 }
 
-/* ---------------------- KONTAKT ---------------------- */
+/* ——— KONTAKT ——— */
 .contact-wrap{
   display:grid;
   gap:28px;
@@ -233,7 +233,7 @@ input,textarea{
 }
 .submit-btn:hover{ background:var(--brand-dark); }
 
-/* ---------------------- FOOTER ---------------------- */
+/* ——— FOOTER ——— */
 footer{
   background:#020617;
   padding:40px 20px;
@@ -282,10 +282,11 @@ footer{
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <h1>Wir vermitteln <span>Fachkräfte & Auszubildende</span> für Handwerk & Industrie.</h1>
+  <h1>Wir vermitteln <span>Fachkräfte für Metall & Industrie</span>.</h1>
   <p class="hero-sub">
-    Anlagenmechaniker · Elektriker · Industriemechaniker · Zerspanungsmechaniker –  
-    praxisgeprüft, zuverlässig und vorqualifiziert.
+    Zerspanungsmechaniker · Industriemechaniker · Mechatroniker –  
+    vorqualifiziert, zuverlässig und einsatzbereit.  
+    Zusätzlich vermitteln wir Bewerber für technische Ausbildungsplätze.
   </p>
   <a href="#kontakt" class="btn">Erstgespräch sichern</a>
   <a href="#leistungen" class="btn" style="background:#fff; color:#111;">Leistungen ansehen</a>
@@ -295,40 +296,42 @@ footer{
 <section id="leistungen">
   <div class="inner">
     <h2>Unser Leistungsspektrum</h2>
-    <p class="section-sub">Wir besetzen Fachkräfte und Auszubildende in den wichtigsten technischen Berufen.</p>
+    <p class="section-sub">Spezialisiert auf Fachkräfte im Metall- und Maschinenbau – ergänzt durch Azubi-Vermittlung in technischen Berufen.</p>
 
     <div class="grid">
-      <div class="card">
-        <h3>Anlagenmechaniker SHK</h3>
-        <p>Fachkräfte für Installation, Wartung und Modernisierung.</p>
-        <div class="pill-row">
-          <span class="pill">Montage</span><span class="pill">Service</span><span class="pill">Sanitär & Heizung</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Elektroniker Energie & Gebäudetechnik</h3>
-        <p>Elektro-Fachkräfte für Neubau, Sanierung und Industrie.</p>
-        <div class="pill-row">
-          <span class="pill">Installation</span><span class="pill">Gebäudetechnik</span><span class="pill">Service</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Industriemechaniker</h3>
-        <p>Fachkräfte für Produktion, Instandhaltung und Anlagenbetrieb.</p>
-        <div class="pill-row">
-          <span class="pill">Produktion</span><span class="pill">Wartung</span><span class="pill">Montage</span>
-        </div>
-      </div>
 
       <div class="card">
         <h3>Zerspanungsmechaniker (CNC)</h3>
-        <p>CNC-Fachkräfte für Dreh-, Fräs- und Präzisionsbearbeitung.</p>
+        <p>Fachkräfte für Drehen, Fräsen und präzise CNC-Bearbeitung.</p>
         <div class="pill-row">
-          <span class="pill">CNC-Drehen</span><span class="pill">CNC-Fräsen</span><span class="pill">Präzision</span>
+          <span class="pill">CNC-Drehen</span><span class="pill">CNC-Fräsen</span><span class="pill">Programmierung</span>
         </div>
       </div>
+
+      <div class="card">
+        <h3>Industriemechaniker & Instandhaltung</h3>
+        <p>Fachkräfte für Produktion, Montage und Anlagenbetrieb.</p>
+        <div class="pill-row">
+          <span class="pill">Produktion</span><span class="pill">Montage</span><span class="pill">Wartung</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Mechatroniker</h3>
+        <p>Experten für Maschinenbau, Automatisierung und Instandhaltung.</p>
+        <div class="pill-row">
+          <span class="pill">Mechanik</span><span class="pill">Elektrik</span><span class="pill">Automatisierung</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Azubis Metall & Technik</h3>
+        <p>Optional unterstützen wir Firmen bei der Besetzung technischer Ausbildungsplätze.</p>
+        <div class="pill-row">
+          <span class="pill">Metallberufe</span><span class="pill">Industrieberufe</span><span class="pill">Vorauswahl</span>
+        </div>
+      </div>
+
     </div>
 
     <div class="leistungen-copy">
@@ -345,31 +348,31 @@ footer{
 <section id="prozess">
   <div class="inner">
     <h2>So arbeiten wir</h2>
-    <p class="section-sub">Ein klarer, schneller Recruiting-Prozess – ohne Zeitverlust für Sie.</p>
+    <p class="section-sub">Ein klarer, schneller Recruiting-Prozess – spezialisiert auf Industrie & Metall.</p>
 
     <div class="grid">
       <div class="card">
         <div class="step-number">1</div>
         <h3>Anforderungsprofil</h3>
-        <p>Wir klären Ihren Bedarf, Standort, Qualifikation und Rahmenbedingungen.</p>
+        <p>Wir definieren Qualifikation, Kenntnisse, Schichtmodell und Standort realistisch.</p>
       </div>
 
       <div class="card">
         <div class="step-number">2</div>
         <h3>Active Sourcing</h3>
-        <p>Gezielte Ansprache & Vorqualifizierung aller relevanten Kandidaten.</p>
+        <p>Gezielte Ansprache aller relevanten Fachkräfte im CNC-, Mechanik- und Mechatronik-Bereich.</p>
       </div>
 
       <div class="card">
         <div class="step-number">3</div>
         <h3>Kandidatenvorschläge</h3>
-        <p>Sie erhalten wenige, aber passende Profile – keine Bewerbungsflut.</p>
+        <p>Sie erhalten wenige, geprüfte Profile – keine Massenbewerbungen.</p>
       </div>
 
       <div class="card">
         <div class="step-number">4</div>
         <h3>Einstellung</h3>
-        <p>Wir begleiten den Prozess bis zur verbindlichen Zusage.</p>
+        <p>Wir begleiten den gesamten Prozess bis zur Zusage.</p>
       </div>
     </div>
 
@@ -383,12 +386,12 @@ footer{
 <section id="kontakt">
   <div class="inner">
     <h2>Kontakt</h2>
-    <p class="section-sub">Lassen Sie uns kurz sprechen – wir geben eine realistische Einschätzung zu Ihren Besetzungsmöglichkeiten.</p>
+    <p class="section-sub">Sprechen wir kurz – wir geben eine ehrliche Einschätzung zu Ihren Besetzungsmöglichkeiten.</p>
 
     <div class="contact-wrap">
       <div class="contact-card">
         <h3>Beder Amer</h3>
-        <p>Ihr Ansprechpartner für Fachkräfte & Azubi-Recruiting.</p>
+        <p>Ihr Ansprechpartner für Fachkräfte im Metall- und Industriebereich.</p>
         <p>📞 <a href="tel:+4915739283779">0157 39283779</a></p>
         <p>✉️ <a href="mailto:info@effectrecruiting.com">info@effectrecruiting.com</a></p>
       </div>
